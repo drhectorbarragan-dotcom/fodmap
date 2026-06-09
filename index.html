@@ -275,6 +275,19 @@
     .receta-ing-lista { font-size:13px; color:var(--gris-oscuro); line-height:1.7; }
     .receta-prep { font-size:13.5px; color:var(--gris-oscuro); line-height:1.65; }
     .receta-nota { background:var(--azul-palido); border-left:3px solid var(--azul-medio); padding:6px 10px; margin-top:7px; font-size:12px; color:#1e40af; border-radius:0 6px 6px 0; }
+
+    /* NOTA CLÍNICA — advertencias para comorbilidades */
+    .nota-clinica { display:flex; align-items:flex-start; gap:10px; background:#fffbeb; border:1px solid #fcd34d; border-left:4px solid #f59e0b; border-radius:0 10px 10px 0; padding:11px 13px; margin:10px 0 6px; font-size:13px; color:#78350f; line-height:1.55; }
+    .nota-clinica-icono { font-size:18px; flex-shrink:0; margin-top:1px; }
+    .nota-clinica-etiqueta { display:block; font-weight:800; font-size:10.5px; color:#92400e; letter-spacing:0.6px; text-transform:uppercase; margin-bottom:3px; }
+    /* TARJETAS DE COMORBILIDADES */
+    .comorbilidad-card { border:1.5px solid var(--borde); border-radius:12px; overflow:hidden; margin-bottom:10px; }
+    .comorbilidad-card:last-child { margin-bottom:0; }
+    .comorbilidad-header { display:flex; align-items:center; gap:10px; padding:11px 14px; font-size:14px; font-weight:800; color:white; }
+    .comorbilidad-body { padding:12px 14px 6px; background:white; }
+    .comorbilidad-restriccion { display:flex; align-items:flex-start; gap:9px; padding:6px 0; border-bottom:1px solid #f1f5f9; font-size:13.5px; color:var(--gris-oscuro); line-height:1.55; }
+    .comorbilidad-restriccion:last-child { border-bottom:none; padding-bottom:4px; }
+    .restriccion-punto { font-size:14px; flex-shrink:0; margin-top:3px; }
     .btn-imprimir { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:18px; background:var(--negro); color:white; border:none; border-radius:10px; padding:13px; font-size:14.5px; font-weight:800; cursor:pointer; font-family:inherit; transition:background 0.15s; }
     .btn-imprimir:hover { background:var(--gris-oscuro); }
     .btn-editar { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:10px; background:transparent; color:var(--azul-real); border:2px solid var(--azul-real); border-radius:10px; padding:11px; font-size:13.5px; font-weight:800; cursor:pointer; font-family:inherit; transition:all 0.15s; }
@@ -439,12 +452,19 @@
     <summary><div class="cat-titulo"><span class="cat-emoji">&#127831;</span> Proteinas</div><span class="chevron">&#9662;</span></summary>
     <div class="cat-body">
       <div class="permitido-bloque">
-        <div class="permitido-titulo">Sin restriccion</div>
+        <div class="permitido-titulo">Sin restricci&oacute;n FODMAP</div>
         <div class="permitido-texto">
           <strong>Carnes y aves:</strong> Res &middot; Cerdo &middot; Pollo &middot; Pavo &middot; Cordero<br>
-          <strong>Pescados y mariscos:</strong> Salmon &middot; Atun &middot; Trucha &middot; Tilapia &middot; Mojarra &middot; Bacalao &middot; Sardinas en agua &middot; Camarones &middot; Cangrejo &middot; Callo de hacha<br>
-          <strong>Huevo:</strong> Cualquier preparacion &mdash; solo evita hacerlo con ajo o cebolla<br>
-          <strong>Proteina vegetal:</strong> Tofu firme &middot; Tempeh
+          <strong>Pescados y mariscos:</strong> Salm&oacute;n &middot; At&uacute;n &middot; Trucha &middot; Tilapia &middot; Mojarra &middot; Bacalao &middot; Sardinas en agua &middot; Camarones &middot; Cangrejo &middot; Callo de hacha<br>
+          <strong>Huevo:</strong> Cualquier preparaci&oacute;n &mdash; solo evita hacerlo con ajo o cebolla<br>
+          <strong>Prote&iacute;na vegetal:</strong> Tofu firme &middot; Tempeh
+        </div>
+      </div>
+      <div class="nota-clinica">
+        <span class="nota-clinica-icono">&#129658;</span>
+        <div>
+          <span class="nota-clinica-etiqueta">Nota cl&iacute;nica importante</span>
+          Los pacientes con <strong>Enfermedad Renal Cr&oacute;nica (ERC)</strong> o <strong>afecciones hep&aacute;ticas severas</strong> (como encefalopatía hep&aacute;tica) pueden requerir <strong>restricci&oacute;n de prote&iacute;nas</strong>. Si padece alguna de estas condiciones, la indicaci&oacute;n de su m&eacute;dico tiene prioridad sobre esta gu&iacute;a.
         </div>
       </div>
       <div class="alimento">
@@ -474,10 +494,17 @@
       <div class="alimento">
         <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Miel de abeja &middot; Jarabe de agave &middot; Jarabe de maiz de alta fructosa &middot; Fructosa pura &middot; Inulina (revisa etiquetas)</span></div>
         <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Jarabe de arce puro (maple) &middot; Azucar de mesa (sacarosa) &middot; Stevia natural &middot; Glucosa &middot; Piloncillo en cantidades minimas</div></div>
-        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Jarabe de arce: max. 1 cucharada (20 g) por ocasion &middot; Azucar de mesa: cantidades normales de cocina son aceptadas</div></details>
+        <details class="porcion-wrap"><summary>&#128207; Ver porci&oacute;n</summary><div class="detalle-porcion">Jarabe de arce: m&aacute;x. 1 cucharada (20&nbsp;g) por ocasi&oacute;n &middot; Az&uacute;car de mesa: cantidades normales de cocina son aceptadas</div></details>
+        <div class="nota-clinica">
+          <span class="nota-clinica-icono">&#129658;</span>
+          <div>
+            <span class="nota-clinica-etiqueta">Nota cl&iacute;nica importante</span>
+            Los pacientes con <strong>Diabetes Mellitus</strong> (tipo&nbsp;1 o&nbsp;2), <strong>resistencia a la insulina</strong> o <strong>s&iacute;ndrome metab&oacute;lico</strong> deben omitir los az&uacute;cares simples, incluyendo el jarabe de arce y la sacarosa mencionados como alternativas FODMAP. Consult&eacute; a su m&eacute;dico sobre el uso de stevia natural como sustituto.
+          </div>
+        </div>
       </div>
       <div class="alimento">
-        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Chicles y caramelos "sin azucar" con: sorbitol, manitol, xilitol, isomalt, lactitol, maltitol</span></div>
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Chicles y caramelos "sin az&uacute;car" con: sorbitol, manitol, xilitol, isomalt, lactitol, maltitol</span></div>
         <div class="fila-advertencia"><span class="adv-icono">&#9888;&#65039;</span><div class="adv-texto"><span class="adv-etiqueta">Recomendacion</span>Evitar completamente durante la fase de restriccion. Busca chicles sin polialcoholes en la etiqueta.</div></div>
       </div>
     </div>
@@ -502,6 +529,87 @@
         <div class="fila-advertencia"><span class="adv-icono">&#9888;&#65039;</span><div class="adv-texto"><span class="adv-etiqueta">Si se consume alcohol (mucha moderacion)</span>Vino tinto o blanco seco &middot; Vodka o gin puros sin mezcladores. Lo ideal es evitar completamente esta fase.</div></div>
         <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Vino seco: max. 1 copa (150 ml) esporadicamente &middot; Destilados puros: 30 ml</div></details>
       </div>
+    </div>
+  </details>
+
+  <!-- 9. COMORBILIDADES FRECUENTES EN MEXICO -->
+  <details class="categoria" id="cat-comorbilidades">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#9877;&#65039;</span> Consideraciones por padecimientos frecuentes</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="nota-monash" style="margin-bottom:14px">
+        &#128204; Esta secci&oacute;n es <strong>complementaria</strong> a la dieta FODMAP. Si usted padece alguna de estas condiciones, sus restricciones alimentarias se <em>suman</em> a las indicaciones FODMAP. Siempre siga las indicaciones individualizadas de su m&eacute;dico o nutrici&oacute;logo.
+      </div>
+
+      <!-- HTA -->
+      <div class="comorbilidad-card">
+        <div class="comorbilidad-header" style="background:linear-gradient(135deg,#991b1b 0%,#dc2626 100%)">
+          <span style="font-size:20px">&#10084;&#65039;</span>
+          <span>Hipertensi&oacute;n Arterial Sist&eacute;mica (HAS)</span>
+        </div>
+        <div class="comorbilidad-body">
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Restricci&oacute;n de sodio:</strong> Limite la sal a menos de 2&nbsp;g de sodio al d&iacute;a (equivalente a &asymp;&nbsp;5&nbsp;g de sal de mesa). Evite agregar sal extra en la mesa.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Ultraprocesados y enlatados:</strong> Sopas instantáneas, embutidos, botanas saladas, salsas comerciales y quesos procesados contienen sodio excesivo y deben evitarse.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10004;&#65039;</span>
+            <span><strong>Alternativa para sazonar:</strong> Hierbas y especias sin sodio son seguras y bajas en FODMAP: or&eacute;gano, comino, epazote, c&uacute;rcuma, pimienta negra, jugo de lim&oacute;n.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISLIPIDEMIAS / MASLD -->
+      <div class="comorbilidad-card">
+        <div class="comorbilidad-header" style="background:linear-gradient(135deg,#713f12 0%,#a16207 100%)">
+          <span style="font-size:20px">&#129504;</span>
+          <span>Dislipidemias e H&iacute;gado Graso (MASLD)</span>
+        </div>
+        <div class="comorbilidad-body">
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Grasas saturadas y trans:</strong> Limite carnes muy grasas, mantequilla en exceso, crema, frituras y productos de reposter&iacute;a industrial. Prefiera aceite de oliva y aguacate en porciones moderadas.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Fructosa industrial:</strong> Evite refrescos, jugos industriales y cualquier producto que contenga &ldquo;jarabe de ma&iacute;z de alta fructosa&rdquo; en su etiqueta &mdash; da&ntilde;a el h&iacute;gado y eleva los triglic&eacute;ridos directamente.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10004;&#65039;</span>
+            <span><strong>Prefiera:</strong> &Omega;mega-3 (salm&oacute;n, sardinas, ch&iacute;a, nueces de castilla) &middot; Fibra soluble (avena en porci&oacute;n FODMAP) &middot; C&uacute;rcuma y canela como antiinflamatorios naturales.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GASTRITIS / ERGE / COLITIS / SII -->
+      <div class="comorbilidad-card">
+        <div class="comorbilidad-header" style="background:linear-gradient(135deg,#14532d 0%,#166534 100%)">
+          <span style="font-size:20px">&#128167;</span>
+          <span>Gastritis, ERGE, Colitis / SII</span>
+        </div>
+        <div class="comorbilidad-body">
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Irritantes:</strong> Evite el chile picante, condimentos agresivos y alimentos muy &aacute;cidos &mdash; pueden empeorar gastritis y reflujo de forma independiente a los FODMAPs.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Grasas pesadas y frituras:</strong> Retardan el vaciamiento g&aacute;strico y agravan el reflujo y la hinchaz&oacute;n abdominal. Prefiera vapor, hervido, asado u horno.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10060;</span>
+            <span><strong>Alimentos fermentables:</strong> Si su SII es muy sensible, incluso algunos alimentos permitidos en porci&oacute;n FODMAP pueden generar gas en exceso en su caso individual. Ident&iacute;f&iacute;quelos con su m&eacute;dico.</span>
+          </div>
+          <div class="comorbilidad-restriccion">
+            <span class="restriccion-punto">&#10004;&#65039;</span>
+            <span><strong>H&aacute;bitos que ayudan:</strong> Comidas frecuentes en porciones peque&ntilde;as &middot; Masticar despacio &middot; Evitar acostarse en las 2&ndash;3 horas siguientes a comer (especialmente con ERGE).</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </details>
 
