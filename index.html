@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
   <title>Guia FODMAP - Fase de Restriccion | Dr. Barragan Cordova</title>
   <style>
     :root {
@@ -26,6 +27,7 @@
       --fondo:       #f8fafc;
       --sombra:      0 2px 14px rgba(15,27,54,0.10);
     }
+    html { color-scheme: light; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -218,19 +220,19 @@
     .form-fila-1 { margin-bottom:13px; }
     .form-grupo { display:flex; flex-direction:column; gap:5px; }
     .form-label { font-size:12.5px; font-weight:700; color:var(--gris-oscuro); }
-    .form-input, .form-select { border:1.5px solid var(--borde); border-radius:8px; padding:9px 11px; font-size:15px; font-family:inherit; color:var(--gris-oscuro); background:white; width:100%; transition:border-color 0.15s; -webkit-appearance:none; appearance:none; }
+    .form-input, .form-select { border:1.5px solid var(--borde); border-radius:8px; padding:9px 11px; font-size:15px; font-family:inherit; color:var(--gris-oscuro) !important; background:white !important; width:100%; transition:border-color 0.15s; -webkit-appearance:none; appearance:none; }
     .form-input:focus, .form-select:focus { outline:none; border-color:var(--azul-medio); box-shadow:0 0 0 3px rgba(37,99,235,0.12); }
     .form-hint { font-size:11.5px; color:var(--gris); margin-top:2px; }
     .check-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px; }
     .check-item { display:flex; align-items:center; gap:8px; background:var(--gris-palido); border:1.5px solid var(--borde); border-radius:8px; padding:8px 10px; cursor:pointer; font-size:13.5px; color:var(--gris-oscuro); font-weight:600; transition:all 0.15s; }
     .check-item:has(input:checked) { background:var(--rojo-claro); border-color:var(--rojo); color:var(--rojo); }
     .check-item input[type="checkbox"] { width:16px; height:16px; accent-color:var(--rojo); flex-shrink:0; }
-    .radio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:4px; }
+    .radio-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:4px; }
     .radio-item { display:flex; flex-direction:column; align-items:center; gap:4px; background:var(--gris-palido); border:2px solid var(--borde); border-radius:10px; padding:10px 6px 8px; cursor:pointer; text-align:center; transition:all 0.15s; }
     .radio-item:has(input:checked) { background:var(--azul-palido); border-color:var(--azul-medio); }
     .radio-item input[type="radio"] { display:none; }
     .radio-emoji { font-size:22px; }
-    .radio-label { font-size:11.5px; font-weight:700; color:var(--gris-oscuro); }
+    .radio-label { font-size:11px; font-weight:700; color:var(--gris-oscuro) !important; line-height:1.3; }
     .nav-form { display:flex; gap:10px; margin-top:20px; justify-content:space-between; align-items:center; }
     .btn-nav-sig { background:var(--azul-real); color:white; border:none; border-radius:10px; padding:12px 22px; font-size:14.5px; font-weight:800; cursor:pointer; font-family:inherit; flex:1; transition:background 0.15s; }
     .btn-nav-sig:hover { background:var(--azul-medio); }
@@ -255,6 +257,7 @@
     .comida-tipo-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
     .comida-nombre { font-size:15px; font-weight:800; color:var(--gris-oscuro); margin-bottom:3px; line-height:1.35; }
     .comida-cal { font-size:12px; color:var(--gris); font-weight:600; }
+    .comida-macros { font-size:11.5px; color:var(--gris-medio); font-weight:600; margin-top:4px; line-height:1.6; display:flex; flex-wrap:wrap; gap:0 6px; }
     .sub-section { background:var(--fondo); border-radius:12px; margin-top:16px; overflow:hidden; border:1.5px solid var(--borde); }
     .sub-section-header { background:var(--azul-palido); border-bottom:1.5px solid var(--azul-claro); padding:11px 14px; font-size:13px; font-weight:800; color:var(--azul-real); display:flex; align-items:center; gap:7px; }
     .sub-section-body { padding:14px; }
@@ -304,8 +307,8 @@
   <div class="especialidad">Medicina Interna &middot; Gastroenterologia &middot; Endoscopia Gastrointestinal</div>
   <div class="contactos">
     <span class="contacto-chip">&#127973; Angeles Universidad &middot; Angeles Pedregal &middot; San Angel Inn HMG</span>
-    <span class="contacto-chip">&#128222; 55 5568-7058 &middot; 55 3683-7574</span>
-    <span class="contacto-chip">&#128241; 55 3204-8657</span>
+    <span class="contacto-chip">&#128222; <a href="tel:+525555687058" style="color:inherit;text-decoration:none">55 5568-7058</a> &middot; <a href="tel:+525536837574" style="color:inherit;text-decoration:none">55 3683-7574</a></span>
+    <span class="contacto-chip">&#128241; <a href="tel:+525532048657" style="color:inherit;text-decoration:none">55 3204-8657</a></span>
     <a class="contacto-wa" href="https://wa.me/525532048657?text=Hola%20Dr.%20Barragan%2C%20tengo%20una%20pregunta%20sobre%20mi%20dieta%20FODMAP" target="_blank">&#128172; WhatsApp</a>
   </div>
 </div>
@@ -631,9 +634,14 @@
                 <span class="radio-label">Omn&iacute;voro</span>
               </label>
               <label class="radio-item">
+                <input type="radio" name="dieta" value="ovolactovegetariano">
+                <span class="radio-emoji">&#129370;</span>
+                <span class="radio-label">Ovolacto&shy;vegetariano</span>
+              </label>
+              <label class="radio-item">
                 <input type="radio" name="dieta" value="vegetariano">
                 <span class="radio-emoji">&#127807;</span>
-                <span class="radio-label">Vegetariano</span>
+                <span class="radio-label">Vegetariano<br><small style="font-weight:500;font-size:10px;opacity:0.8">(sin huevo)</small></span>
               </label>
               <label class="radio-item">
                 <input type="radio" name="dieta" value="vegano">
@@ -721,7 +729,7 @@
 <div class="footer">
   <strong>Dr. Hector Hugo Barragan Cordova</strong><br>
   Cedula Profesional 4784900 &middot; Cedula Esp. 7876212 &middot; Cedula Esp. 8025889<br>
-  &#128222; 55 5568-7058 &middot; 55 3683-7574 &middot; &#128241; 55 3204-8657<br>
+  &#128222; <a href="tel:+525555687058" style="color:rgba(255,255,255,0.65);text-decoration:none">55 5568-7058</a> &middot; <a href="tel:+525536837574" style="color:rgba(255,255,255,0.65);text-decoration:none">55 3683-7574</a> &middot; &#128241; <a href="tel:+525532048657" style="color:rgba(255,255,255,0.65);text-decoration:none">55 3204-8657</a><br>
   <a class="btn-wa" href="https://wa.me/525532048657?text=Hola%20Dr.%20Barragan%2C%20tengo%20una%20pregunta%20sobre%20mi%20dieta%20FODMAP" target="_blank">
     &#128172; Escribir al Dr. por WhatsApp
   </a>
@@ -733,129 +741,129 @@
 // ============================================================
 var PLATILLOS = {
   desayunos: [
-    { id:'D1', nombre:'Huevos revueltos con jitomate y tortillas de maíz', calorias:320, vegetariano:true, vegano:false, alergenos:['huevo'],
+    { id:'D1', nombre:'Huevos revueltos con jitomate y tortillas de maíz', calorias:320, proteinas:15, carbohidratos:28, grasas:16, vegetariano:true, vegano:false, alergenos:['huevo'],
       ingredientes:['2 huevos grandes','2 tortillas de maíz pequeñas','1 jitomate mediano en cubos','1 cdita de aceite de oliva','Cebollín (parte verde) al gusto','Sal y pimienta al gusto'],
       preparacion:'Calienta el aceite en sartén a fuego medio. Bate los huevos con sal y pimienta. Vierte en la sartén y revuelve suavemente hasta que estén cocidos pero aún húmedos. Agrega el jitomate y el cebollín picado. Sirve inmediatamente con las tortillas calientes.',
       nota:'Usa solo la parte verde del cebollín para mantener el platillo bajo en FODMAP.' },
-    { id:'D2', nombre:'Avena cremosa con fresas y leche sin lactosa', calorias:285, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'D2', nombre:'Avena cremosa con fresas y leche sin lactosa', calorias:285, proteinas:12, carbohidratos:46, grasas:5, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['1/4 taza (25g) de avena en hojuelas','1/2 taza de leche sin lactosa','1/2 taza de agua','1/2 taza de fresas frescas en mitades','1 cdita de semillas de chía','1 cdita de miel de maple (opcional)'],
       preparacion:'Mezcla la avena con la leche y el agua en una olla pequeña. Cocina a fuego medio-bajo, moviendo constantemente por 5-7 minutos hasta que espese. Sirve en tazón y decora con fresas y semillas de chía. Añade miel de maple al gusto.',
       nota:'Mantén la porción de avena en 1/4 de taza (seca) para que sea baja en FODMAP.' },
-    { id:'D3', nombre:'Quesadilla de maíz con espinaca y queso cheddar', calorias:355, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'D3', nombre:'Quesadilla de maíz con espinaca y queso cheddar', calorias:355, proteinas:14, carbohidratos:42, grasas:15, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['2 tortillas de maíz medianas','40g de queso cheddar rallado','1/2 taza de espinacas baby','1 cdita de aceite de oliva','Sal al gusto'],
       preparacion:'Calienta una sartén a fuego medio. Coloca una tortilla, agrega el queso y las espinacas, cubre con la otra tortilla. Cocina 2-3 minutos por cada lado hasta que el queso se derrita y las tortillas estén doradas. Corta en triángulos y sirve.',
       nota:'Los quesos maduros como el cheddar son bajos en lactosa y aptos para la dieta FODMAP.' },
-    { id:'D4', nombre:'Yogurt sin lactosa con fresas y semillas de chía', calorias:245, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'D4', nombre:'Yogurt sin lactosa con fresas y semillas de chía', calorias:245, proteinas:12, carbohidratos:35, grasas:6, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['150g de yogurt natural sin lactosa','3/4 taza de fresas frescas en cubos','1 cdita de semillas de chía','1 cda de granola sin trigo (opcional)','1 cdita de miel de maple'],
       preparacion:'Sirve el yogurt en un tazón. Agrega las fresas, espolvorea las semillas de chía y la granola. Termina con un chorrito de miel de maple.',
       nota:'Verifica que la granola no contenga trigo ni miel de agave.' },
-    { id:'D5', nombre:'Tostadas de maíz con mantequilla de cacahuate y plátano', calorias:305, vegetariano:true, vegano:true, alergenos:['cacahuate'],
+    { id:'D5', nombre:'Tostadas de maíz con mantequilla de cacahuate y plátano', calorias:305, proteinas:7, carbohidratos:38, grasas:12, vegetariano:true, vegano:true, alergenos:['cacahuate'],
       ingredientes:['3 tostadas de maíz delgadas','2 cdas de mantequilla de cacahuate natural','1/2 plátano verde en rebanadas','1 pizca de canela'],
       preparacion:'Unta la mantequilla de cacahuate sobre las tostadas. Coloca las rebanadas de plátano encima y espolvorea la canela. Sirve de inmediato.',
       nota:'Usa plátano verde o pintón (no muy maduro). La mantequilla de cacahuate no debe contener ajo ni cebolla en polvo.' },
-    { id:'D6', nombre:'Smoothie de plátano, fresas y leche de almendra', calorias:270, vegetariano:true, vegano:true, alergenos:['nueces'],
+    { id:'D6', nombre:'Smoothie de plátano, fresas y leche de almendra', calorias:270, proteinas:5, carbohidratos:44, grasas:7, vegetariano:true, vegano:true, alergenos:['nueces'],
       ingredientes:['1/2 plátano mediano firme','1 taza de fresas congeladas o frescas','1 taza (250 ml) de leche de almendra sin endulzar','1 cdita de semillas de chía','Cubos de hielo (opcional)'],
       preparacion:'Coloca todos los ingredientes en la licuadora. Licua a velocidad alta durante 1 minuto hasta obtener una mezcla suave y homogénea. Sirve inmediatamente.',
       nota:'La leche de almendra (250 ml) es baja en FODMAP. Usa 1/2 plátano para mantener la porción adecuada.' },
-    { id:'D7', nombre:'Salmón con huevo cocido y arroz', calorias:395, vegetariano:false, vegano:false, alergenos:['pescado','huevo'],
+    { id:'D7', nombre:'Salmón con huevo cocido y arroz', calorias:395, proteinas:34, carbohidratos:23, grasas:18, vegetariano:false, vegano:false, alergenos:['pescado','huevo'],
       ingredientes:['80g de salmón al vapor o ahumado','2 huevos cocidos','1/2 taza de arroz blanco cocido','1 cdita de aceite de oliva','Jugo de 1/2 limón','Cebollín (parte verde) al gusto'],
       preparacion:'Sirve el arroz en el plato. Coloca el salmón al lado y los huevos cortados en mitades. Rocía con aceite de oliva y jugo de limón. Decora con cebollín picado.',
       nota:'El salmón es completamente libre de FODMAP y rico en ácidos grasos omega-3.' },
-    { id:'D8', nombre:'Hotcakes de harina de arroz con maple y fresas', calorias:375, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
+    { id:'D8', nombre:'Hotcakes de harina de arroz con maple y fresas', calorias:375, proteinas:12, carbohidratos:58, grasas:13, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
       ingredientes:['1/2 taza de harina de arroz','1/2 taza de leche sin lactosa','1 huevo','1 cdita de polvo para hornear (sin gluten)','1 cdita de aceite de coco','1 cda de miel de maple','1/2 taza de fresas para acompañar'],
       preparacion:'Mezcla la harina, polvo para hornear y una pizca de sal. Agrega el huevo batido, la leche y el aceite. Mezcla hasta obtener una masa suave. Calienta sartén antiadherente a fuego medio-bajo. Vierte 1/4 de taza por hotcake y cocina 2-3 minutos por lado hasta dorar. Sirve con fresas y miel de maple.',
       nota:'Usa harina de arroz pura, no mezclas preparadas que puedan contener trigo.' }
   ],
   comidas: [
-    { id:'C1', nombre:'Pechuga de pollo asada con arroz y zanahorias al vapor', calorias:485, vegetariano:false, vegano:false, alergenos:[],
+    { id:'C1', nombre:'Pechuga de pollo asada con arroz y zanahorias al vapor', calorias:485, proteinas:42, carbohidratos:48, grasas:10, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['150g de pechuga de pollo','1/2 taza de arroz blanco cocido','1 zanahoria mediana en rodajas','2 cditas de aceite de oliva','Jugo de 1 limón','Orégano, sal y pimienta al gusto','Cebollín (parte verde) picado'],
       preparacion:'Marina el pollo con aceite, jugo de limón, orégano, sal y pimienta por 15 minutos. Asa en sartén o plancha a fuego medio-alto, 6-7 minutos por lado, hasta que esté cocido. Cuece las zanahorias al vapor por 8-10 minutos. Sirve con arroz blanco y espolvorea cebollín.',
       nota:'Evita marinadas comerciales que contengan cebolla o ajo en polvo.' },
-    { id:'C2', nombre:'Sopa de arroz con verduras FODMAP', calorias:375, vegetariano:true, vegano:true, alergenos:[],
+    { id:'C2', nombre:'Sopa de arroz con verduras FODMAP', calorias:375, proteinas:8, carbohidratos:64, grasas:7, vegetariano:true, vegano:true, alergenos:[],
       ingredientes:['1/3 taza de arroz blanco','1 zanahoria en cubos','1 papa mediana en cubos','2 tazas de caldo de verduras (sin ajo/cebolla)','1/2 taza de espinacas','1 cdita de aceite de ajo infusionado','Sal, orégano y pimienta al gusto'],
       preparacion:'En una olla, calienta el aceite de ajo infusionado. Agrega el caldo, la zanahoria y la papa. Hierve a fuego medio por 10 minutos. Agrega el arroz y cocina 15 minutos más. Incorpora las espinacas al final y cocina 2 minutos. Sazona al gusto.',
       nota:'Aceite de ajo infusionado: calienta aceite con dientes de ajo, retira el ajo antes de usar. El aceite absorbe el sabor sin los FODMAPs.' },
-    { id:'C3', nombre:'Ensalada de atún con tostadas de maíz', calorias:385, vegetariano:false, vegano:false, alergenos:['pescado'],
+    { id:'C3', nombre:'Ensalada de atún con tostadas de maíz', calorias:385, proteinas:30, carbohidratos:38, grasas:12, vegetariano:false, vegano:false, alergenos:['pescado'],
       ingredientes:['1 lata (140g) de atún en agua escurrido','2 tazas de lechuga romana picada','10 jitomates cherry en mitades','1/2 pepino en rodajas','2 cdas de aceite de oliva','Jugo de 1 limón','4 tostadas de maíz','Sal y pimienta al gusto'],
       preparacion:'Mezcla el atún con el aceite de oliva, jugo de limón, sal y pimienta. Sirve sobre la lechuga, agrega jitomates cherry y pepino. Acompaña con tostadas de maíz al lado.',
       nota:'Verifica que el atún enlatado no contenga salsas con ajo o cebolla.' },
-    { id:'C4', nombre:'Bistec a la plancha con papa y brócoli', calorias:520, vegetariano:false, vegano:false, alergenos:[],
+    { id:'C4', nombre:'Bistec a la plancha con papa y brócoli', calorias:520, proteinas:38, carbohidratos:42, grasas:16, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['150g de bistec de res','1 papa mediana','1 taza de floretes de brócoli (75g)','1 cda de aceite de oliva','Sal, pimienta y orégano al gusto','Jugo de limón al gusto'],
       preparacion:'Cuece la papa entera al horno (200°C, 45 min) o en microondas (8 min). Blanquea el brócoli en agua hirviendo 3-4 minutos. Marina el bistec con aceite, sal y pimienta. Asa en plancha caliente 3-4 minutos por lado. Sirve con la papa abierta y el brócoli con jugo de limón.',
       nota:'Solo usa las flores de brócoli (no el tallo) y mantén la porción en 3/4 de taza (75g) máximo.' },
-    { id:'C5', nombre:'Tacos de pollo al limón en tortillas de maíz', calorias:440, vegetariano:false, vegano:false, alergenos:[],
+    { id:'C5', nombre:'Tacos de pollo al limón en tortillas de maíz', calorias:440, proteinas:36, carbohidratos:44, grasas:10, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['130g de pechuga de pollo en tiras','4 tortillas de maíz pequeñas','1 taza de lechuga en tiras','10 jitomates cherry en mitades','1/2 limón','1 cdita de aceite de ajo infusionado','Sal, comino y orégano al gusto','Cebollín (parte verde) picado'],
       preparacion:'Salpimienta las tiras de pollo con comino y orégano. Saltea en sartén con aceite de ajo infusionado por 8-10 minutos hasta dorar. Calienta las tortillas en comal. Arma los tacos con el pollo, lechuga, jitomates y cebollín. Exprime limón al gusto.',
       nota:'El aceite de ajo infusionado aporta sabor sin los FODMAPs del ajo directo.' },
-    { id:'C6', nombre:'Caldo de pollo con verduras y arroz', calorias:365, vegetariano:false, vegano:false, alergenos:[],
+    { id:'C6', nombre:'Caldo de pollo con verduras y arroz', calorias:365, proteinas:28, carbohidratos:42, grasas:8, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['120g de pechuga de pollo en cubos','1/4 taza de arroz blanco','1 zanahoria en rodajas','1 papa pequeña en cubos','1/2 taza de acelgas picadas','2 tazas de caldo sin ajo/cebolla','Sal, pimienta, orégano y epazote al gusto'],
       preparacion:'Pon el pollo en la olla con agua y lleva a hervor. Retira la espuma. Agrega la zanahoria, papa, orégano y sal. Cocina 15 minutos. Incorpora el arroz y las acelgas. Cocina 15 minutos más. Sirve caliente.',
       nota:'El epazote es libre de FODMAP y aporta sabor típico mexicano.' },
-    { id:'C7', nombre:'Salmón al horno con ensalada de espinacas', calorias:415, vegetariano:false, vegano:false, alergenos:['pescado'],
+    { id:'C7', nombre:'Salmón al horno con ensalada de espinacas', calorias:415, proteinas:34, carbohidratos:8, grasas:24, vegetariano:false, vegano:false, alergenos:['pescado'],
       ingredientes:['150g de filete de salmón','2 tazas de espinacas baby','10 jitomates cherry','1/4 pepino en rodajas','2 cdas de aceite de oliva','Jugo de 1 limón','Sal, pimienta y eneldo al gusto'],
       preparacion:'Precalienta el horno a 200°C. Coloca el salmón en papel aluminio, sazona con sal, pimienta y eneldo, rocía con aceite y jugo de limón. Envuelve y hornea 15-18 minutos. Mezcla las espinacas, jitomates y pepino con vinagreta de aceite y limón. Sirve el salmón sobre la ensalada.',
       nota:'El salmón es excelente fuente de proteína sin FODMAP y rico en omega-3.' },
-    { id:'C8', nombre:'Pasta de arroz con salsa de jitomate y pollo', calorias:475, vegetariano:false, vegano:false, alergenos:[],
+    { id:'C8', nombre:'Pasta de arroz con salsa de jitomate y pollo', calorias:475, proteinas:34, carbohidratos:56, grasas:12, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['80g de pasta de arroz','100g de pechuga de pollo en cubos','3 jitomates medianos en cubos','1 cda de aceite de ajo infusionado','1/2 taza de espinacas','Orégano, albahaca, sal y pimienta','30g de queso parmesano rallado (opcional)'],
       preparacion:'Cuece la pasta en agua con sal según instrucciones (6-8 min). Saltea el pollo en aceite de ajo infusionado hasta dorar. Agrega el jitomate, orégano y albahaca. Cocina 10 minutos. Incorpora las espinacas 2 minutos más. Mezcla con la pasta escurrida. Sirve con queso parmesano.',
       nota:'Usa pasta 100% de arroz. El parmesano maduro es bajo en lactosa.' },
-    { id:'C9', nombre:'Arroz con huevo estrellado y verduras salteadas', calorias:390, vegetariano:true, vegano:false, alergenos:['huevo'],
+    { id:'C9', nombre:'Arroz con huevo estrellado y verduras salteadas', calorias:390, proteinas:16, carbohidratos:52, grasas:14, vegetariano:true, vegano:false, alergenos:['huevo'],
       ingredientes:['1 taza de arroz cocido','2 huevos','1 zanahoria rallada','1/2 taza de espinacas','10 jitomates cherry','2 cditas de aceite de ajo infusionado','1 cdita de salsa de soya sin gluten (tamari)','Sal y pimienta al gusto'],
       preparacion:'Saltea la zanahoria y jitomates en sartén con aceite de ajo infusionado por 3-4 minutos. Agrega las espinacas y el arroz, mezcla bien. Añade el tamari. En sartén aparte, estrella los huevos con un poco de aceite. Sirve el arroz con verduras y el huevo encima.',
       nota:'El tamari (salsa de soya sin trigo) es libre de gluten y bajo en FODMAP en cantidades pequeñas.' }
   ],
   cenas: [
-    { id:'CE1', nombre:'Crema de zanahoria con tostadas de maíz', calorias:285, vegetariano:true, vegano:true, alergenos:[],
+    { id:'CE1', nombre:'Crema de zanahoria con tostadas de maíz', calorias:285, proteinas:5, carbohidratos:48, grasas:8, vegetariano:true, vegano:true, alergenos:[],
       ingredientes:['3 zanahorias medianas en trozos','1 papa pequeña en cubos','2 tazas de caldo de verduras (sin ajo/cebolla)','1 cda de aceite de oliva','Sal, pimienta y comino al gusto','4 tostadas de maíz','Cebollín (parte verde) para decorar'],
       preparacion:'Cuece la zanahoria y la papa en el caldo por 20 minutos hasta que estén suaves. Licua con el aceite de oliva hasta obtener una crema suave. Sazona con sal, pimienta y comino. Si queda muy espesa, agrega más caldo. Sirve caliente con tostadas de maíz y cebollín.',
       nota:'Crema libre de FODMAP, reconfortante y fácil de digerir.' },
-    { id:'CE2', nombre:'Pollo al limón con ensalada de lechuga y pepino', calorias:340, vegetariano:false, vegano:false, alergenos:[],
+    { id:'CE2', nombre:'Pollo al limón con ensalada de lechuga y pepino', calorias:340, proteinas:34, carbohidratos:8, grasas:16, vegetariano:false, vegano:false, alergenos:[],
       ingredientes:['130g de pechuga de pollo rebanada','2 tazas de lechuga romana','1/2 pepino en rodajas','10 jitomates cherry','1 cda de aceite de oliva','Jugo de 1 limón','Sal, pimienta y orégano al gusto'],
       preparacion:'Saóóna el pollo con sal, pimienta y orégano. Asa en sartén con aceite, 5-6 minutos por lado. Exprime limón al final. Mezcla la lechuga, pepino y jitomates. Prepara vinagreta con aceite y limón. Sirve la ensalada con el pollo encima.',
       nota:'Cena ligera y balanceada, perfecta para una digestión tranquila en la noche.' },
-    { id:'CE3', nombre:'Omelette de espinacas y queso feta', calorias:365, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
+    { id:'CE3', nombre:'Omelette de espinacas y queso feta', calorias:365, proteinas:22, carbohidratos:18, grasas:22, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
       ingredientes:['3 huevos','1/2 taza de espinacas baby','40g de queso feta desmenuzado','1 cdita de aceite de oliva','Sal y pimienta al gusto','1/2 taza de arroz blanco (guarnición)'],
       preparacion:'Bate los huevos con sal y pimienta. Calienta aceite en sartén a fuego medio-bajo. Vierte los huevos y deja cuajar la base sin mover (1-2 min). Agrega las espinacas y el feta sobre la mitad del omelette. Dobla por la mitad y cocina 1 minuto más. Sirve con arroz.',
       nota:'El queso feta es bajo en lactosa y apto para FODMAP en porciones de hasta 40g.' },
-    { id:'CE4', nombre:'Sopa de verduras FODMAP con tortillas tostadas', calorias:255, vegetariano:true, vegano:true, alergenos:[],
+    { id:'CE4', nombre:'Sopa de verduras FODMAP con tortillas tostadas', calorias:255, proteinas:5, carbohidratos:44, grasas:6, vegetariano:true, vegano:true, alergenos:[],
       ingredientes:['1 zanahoria en cubos','1 papa pequeña en cubos','1/2 taza de acelgas picadas','2 tazas de caldo de verduras (sin ajo/cebolla)','1 cdita de aceite de ajo infusionado','2 tortillas de maíz cortadas en tiras y tostadas','Sal, orégano y pimienta al gusto'],
       preparacion:'Calienta el aceite en olla, agrega las verduras y saltea 2 minutos. Añade el caldo y hierve a fuego medio 15 minutos. Incorpora las acelgas y cocina 5 minutos más. Sazona. Tuesta las tiras de tortilla en horno o sartén seco hasta que estén crujientes. Sirve la sopa con las tiras encima.',
       nota:'Sopa muy ligera y digestiva, ideal para la noche.' },
-    { id:'CE5', nombre:'Atún con arroz y pepino', calorias:295, vegetariano:false, vegano:false, alergenos:['pescado'],
+    { id:'CE5', nombre:'Atún con arroz y pepino', calorias:295, proteinas:24, carbohidratos:32, grasas:6, vegetariano:false, vegano:false, alergenos:['pescado'],
       ingredientes:['1 lata (100g) de atún en agua escurrido','1/2 taza de arroz blanco cocido','1/2 pepino en rodajas','5 jitomates cherry','1 cda de aceite de oliva','Jugo de limón al gusto','Sal y pimienta al gusto'],
       preparacion:'Mezcla el atún con aceite de oliva, jugo de limón y sazona. Sirve sobre el arroz. Coloca el pepino y jitomates al lado. Puedes añadir un poco más de limón al arroz.',
       nota:'Cena sencilla, baja en calorías y con buena fuente de proteína.' },
-    { id:'CE6', nombre:'Chilaquiles de maíz con jitomate y queso cotija', calorias:350, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'CE6', nombre:'Chilaquiles de maíz con jitomate y queso cotija', calorias:350, proteinas:12, carbohidratos:44, grasas:14, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['6 tortillas de maíz cortadas en triángulos y tostadas','3 jitomates medianos','1 cda de aceite de ajo infusionado','30g de queso cotija o feta rallado','Sal, orégano y pimienta al gusto','Cebollín (parte verde) al gusto'],
       preparacion:'Tuesta los triángulos de tortilla al horno (180°C, 12 min) hasta que estén crujientes. Licua los jitomates con sal y orégano. Calienta el aceite en sartén, vierte la salsa y cocina 8 minutos. Agrega las tortillas tostadas y mezcla. Sirve inmediatamente con queso y cebollín.',
       nota:'Usa tortillas de maíz puras, sin adición de trigo.' },
-    { id:'CE7', nombre:'Sardinas al limón con papa al vapor y acelgas', calorias:315, vegetariano:false, vegano:false, alergenos:['pescado'],
+    { id:'CE7', nombre:'Sardinas al limón con papa al vapor y acelgas', calorias:315, proteinas:24, carbohidratos:28, grasas:12, vegetariano:false, vegano:false, alergenos:['pescado'],
       ingredientes:['1 lata de sardinas en aceite de oliva','1 papa mediana cocida en cubos','1 taza de acelgas cocidas al vapor','Jugo de 1 limón','1 cdita de aceite de oliva','Sal, pimienta y orégano al gusto'],
       preparacion:'Cuece la papa en agua con sal por 15 minutos. Cuece las acelgas al vapor por 5 minutos. Sirve en plato las sardinas escurridas, acompaña con papa y acelgas. Rocía todo con jugo de limón y aceite de oliva. Sazona al gusto.',
       nota:'Las sardinas son libres de FODMAP y ricas en omega-3 y calcio.' }
   ],
   colaciones: [
-    { id:'CO1', nombre:'Fresas con yogurt sin lactosa', calorias:125, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'CO1', nombre:'Fresas con yogurt sin lactosa', calorias:125, proteinas:8, carbohidratos:18, grasas:2, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['100g de yogurt natural sin lactosa','1 taza de fresas frescas','1 cdita de miel de maple'],
       preparacion:'Sirve el yogurt en un tazón pequeño. Agrega las fresas enteras o en mitades y termina con la miel de maple.',
       nota:'Snack rico en probiticos, vitamina C y proteína.' },
-    { id:'CO2', nombre:'Tostadas de maíz con mantequilla de cacahuate', calorias:155, vegetariano:true, vegano:true, alergenos:['cacahuate'],
+    { id:'CO2', nombre:'Tostadas de maíz con mantequilla de cacahuate', calorias:155, proteinas:5, carbohidratos:18, grasas:8, vegetariano:true, vegano:true, alergenos:['cacahuate'],
       ingredientes:['2 tostadas de maíz','1.5 cdas de mantequilla de cacahuate natural','1 pizca de canela o semillas de chía (opcional)'],
       preparacion:'Unta la mantequilla de cacahuate sobre las tostadas. Espolvorea canela o chía si gustas.',
       nota:'Snack saciante con proteína vegetal y grasa saludable.' },
-    { id:'CO3', nombre:'Plátano firme con almendras', calorias:165, vegetariano:true, vegano:true, alergenos:['nueces'],
+    { id:'CO3', nombre:'Plátano firme con almendras', calorias:165, proteinas:4, carbohidratos:22, grasas:8, vegetariano:true, vegano:true, alergenos:['nueces'],
       ingredientes:['1/2 plátano mediano firme','10 almendras crudas o tostadas sin sal'],
       preparacion:'Pela y rebana el plátano. Sirve con las almendras al lado.',
       nota:'Límita las almendras a 10 piezas para mantener la porción baja en FODMAP.' },
-    { id:'CO4', nombre:'Naranja con semillas de calabaza tostadas', calorias:145, vegetariano:true, vegano:true, alergenos:[],
+    { id:'CO4', nombre:'Naranja con semillas de calabaza tostadas', calorias:145, proteinas:6, carbohidratos:18, grasas:6, vegetariano:true, vegano:true, alergenos:[],
       ingredientes:['1 naranja mediana','2 cdas de semillas de calabaza tostadas','1 pizca de sal y chile en polvo (opcional)'],
       preparacion:'Pela y separa la naranja en gajos. Sirve con las semillas de calabaza al lado. Puedes añadir chile en polvo y sal a las semillas.',
       nota:'Snack rico en vitamina C, zinc y magnesio.' },
-    { id:'CO5', nombre:'Cereal de arroz con leche sin lactosa', calorias:175, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'CO5', nombre:'Cereal de arroz con leche sin lactosa', calorias:175, proteinas:5, carbohidratos:32, grasas:3, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['30g de cereal de arroz inflado (sin azúcar)','3/4 taza de leche sin lactosa o de almendra','1/2 plátano verde en rodajas'],
       preparacion:'Sirve el cereal de arroz en un tazón, agrega la leche y el plátano.',
       nota:'Verifica que el cereal no contenga trigo ni jarabes de maíz de alta fructosa.' },
-    { id:'CO6', nombre:'Zanahoria con queso cheddar', calorias:130, vegetariano:true, vegano:false, alergenos:['lacteos'],
+    { id:'CO6', nombre:'Zanahoria con queso cheddar', calorias:130, proteinas:7, carbohidratos:10, grasas:7, vegetariano:true, vegano:false, alergenos:['lacteos'],
       ingredientes:['2 zanahorias medianas en bastones','30g de queso cheddar en cubos','Sal y limón al gusto'],
       preparacion:'Corta la zanahoria en bastones y el queso en cubos. Sirve en un plato y añade un poco de jugo de limón y sal a la zanahoria.',
       nota:'Snack crujiente y nutritivo, libre de FODMAP.' }
@@ -971,7 +979,10 @@ function filtrarPlatillos(lista) {
   var alergenos = datosPaciente.alergenos || [];
   return lista.filter(function(p) {
     if (dieta === 'vegano' && !p.vegano) return false;
-    if (dieta === 'vegetariano' && !p.vegetariano) return false;
+    // ovolactovegetariano: sin carne ni pescado, pero acepta huevo Y lácteos
+    if (dieta === 'ovolactovegetariano' && !p.vegetariano) return false;
+    // vegetariano estricto (lacto-vegetariano): sin carne, pescado ni huevo
+    if (dieta === 'vegetariano' && (!p.vegetariano || p.alergenos.indexOf('huevo') >= 0)) return false;
     if (alergenos.length > 0 && p.alergenos.some(function(a){ return alergenos.indexOf(a) >= 0; })) return false;
     return true;
   });
@@ -1042,10 +1053,17 @@ function colorTipo(tipo) {
 
 function renderComidasDia(plan) {
   return plan.map(function(m) {
+    var p = m.platillo;
+    var macros = '&#128293; ' + p.calorias + ' kcal';
+    if (p.proteinas !== undefined) {
+      macros += ' &nbsp;|&nbsp; &#129385; Proteína: ' + p.proteinas + 'g' +
+                ' &nbsp;|&nbsp; &#127806; Carbs: ' + p.carbohidratos + 'g' +
+                ' &nbsp;|&nbsp; &#129361; Grasas: ' + p.grasas + 'g';
+    }
     return '<div class="comida-card">' +
       '<div class="comida-tipo"><span class="comida-tipo-dot" style="background:' + colorTipo(m.tipo) + '"></span>' + m.tipo + '</div>' +
-      '<div class="comida-nombre">' + m.platillo.nombre + '</div>' +
-      '<div class="comida-cal">&#128293; ' + m.platillo.calorias + ' kcal</div></div>';
+      '<div class="comida-nombre">' + p.nombre + '</div>' +
+      '<div class="comida-macros">' + macros + '</div></div>';
   }).join('');
 }
 
