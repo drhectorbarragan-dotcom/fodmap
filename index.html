@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia FODMAP - Fase de Restriccion | Dr. Barragan Cordova</title>
+  <style>
+    :root {
+      --rojo:        #b91c1c;
+      --rojo-claro:  #fff1f1;
+      --verde:       #166534;
+      --verde-claro: #f0fdf4;
+      --verde-medio: #15803d;
+      --negro:       #0a0f1e;
+      --marino:      #0f1b36;
+      --azul-real:   #1e3a8a;
+      --azul-medio:  #2563eb;
+      --azul-claro:  #dbeafe;
+      --azul-palido: #eff6ff;
+      --gris-oscuro: #1e293b;
+      --gris-medio:  #475569;
+      --gris:        #64748b;
+      --gris-claro:  #94a3b8;
+      --gris-palido: #f1f5f9;
+      --borde:       #cbd5e1;
+      --fondo:       #f8fafc;
+      --sombra:      0 2px 14px rgba(15,27,54,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--fondo); color: var(--gris-oscuro); line-height: 1.6; font-size: 16px;
+    }
+
+    /* ENCABEZADO */
+    .header {
+      background: linear-gradient(160deg, #0a0f1e 0%, #0f1b36 60%, #1e3a8a 100%);
+      color: white; padding: 20px 18px 16px; text-align: center;
+    }
+    .header h1 { font-size: 18px; font-weight: 800; letter-spacing: -0.2px; margin-bottom: 3px; }
+    .header .especialidad { font-size: 12.5px; opacity: 0.82; margin-bottom: 12px; }
+    .contactos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; font-size: 11.5px; }
+    .contacto-chip { background: rgba(255,255,255,0.16); border-radius: 20px; padding: 3px 10px; }
+    .contacto-wa {
+      background: rgba(37,211,102,0.28); border-radius: 20px; padding: 3px 10px;
+      text-decoration: none; color: white; font-weight: 700;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0f1b36 0%, #1e3a8a 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: white; padding: 11px 20px 10px;
+      display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+    }
+    .hero-fase {
+      display: inline-block; background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4); border-radius: 20px;
+      padding: 3px 12px; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+    }
+    .hero-texto h2 { font-size: 17px; font-weight: 900; color: #ffffff; line-height: 1.2; margin-bottom: 2px; }
+    .hero-texto p  { font-size: 12px; opacity: 0.82; line-height: 1.3; }
+    @media (max-width: 420px) {
+      .hero { flex-direction: column; gap: 6px; text-align: center; }
+      .hero-texto { text-align: center; }
+    }
+
+    /* CONTENEDOR */
+    .container { max-width: 680px; margin: 0 auto; padding: 14px 13px 26px; }
+
+    /* LEYENDA */
+    .leyenda {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      padding: 10px 14px; background: white; border-radius: 12px;
+      margin-bottom: 10px; box-shadow: var(--sombra);
+      font-size: 13px; font-weight: 600; color: var(--gris-oscuro);
+    }
+    .leyenda-item { display: flex; align-items: center; gap: 7px; }
+
+    /* AVISO */
+    .aviso-fase {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--azul-palido); border: 1.5px solid var(--azul-claro);
+      border-left: 4px solid var(--azul-medio); border-radius: 0 10px 10px 0;
+      padding: 10px 13px; margin-bottom: 12px;
+      font-size: 13.5px; color: #1e3a8a; line-height: 1.5;
+    }
+    .aviso-icono { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .aviso-texto strong { font-weight: 800; }
+
+    /* DETAILS / SUMMARY */
+    summary { list-style: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    summary::-webkit-details-marker { display: none; }
+    summary::marker { display: none; }
+
+    /* CATEGORIA */
+    details.categoria {
+      background: white; border-radius: 14px; margin-bottom: 10px; box-shadow: var(--sombra); overflow: hidden;
+    }
+    details.categoria > summary {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 17px; user-select: none; transition: background 0.2s;
+    }
+    details.categoria > summary:hover  { background: #f8fafc; }
+    details.categoria > summary:active { background: var(--gris-palido); }
+    .cat-titulo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 16.5px; font-weight: 800; color: var(--gris-oscuro);
+    }
+    .cat-emoji { font-size: 22px; line-height: 1; }
+    .chevron { font-size: 18px; color: var(--gris); transition: transform 0.28s; flex-shrink: 0; }
+    details.categoria[open] > summary .chevron { transform: rotate(180deg); }
+    .cat-body { padding: 0 17px 15px; border-top: 1px solid var(--borde); animation: fadeIn 0.22s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+
+    /* BADGES */
+    .badge-evitar {
+      display: inline-block; background: var(--rojo); color: white;
+      font-size: 9.5px; font-weight: 800; letter-spacing: 0.7px;
+      padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 4px; text-transform: uppercase;
+    }
+    .flecha-ok { color: var(--verde-medio); font-size: 20px; font-weight: 900; flex-shrink: 0; margin-top: 4px; line-height: 1; }
+
+    /* ALIMENTO */
+    .alimento { padding: 14px 0 12px; border-bottom: 1px solid #f1f5f9; }
+    .alimento:last-child { border-bottom: none; }
+    .fila-evitar { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 9px; }
+    .texto-evitar { font-size: 17px; color: #991b1b; font-weight: 700; line-height: 1.4; }
+    .fila-alt { display: flex; align-items: flex-start; gap: 9px; background: var(--verde-claro); border-radius: 10px; padding: 10px 13px; }
+    .contenido-alt { font-size: 15px; color: #14532d; line-height: 1.5; }
+    .etiqueta-alt {
+      display: block; font-weight: 800; font-size: 11px; color: var(--verde);
+      letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 3px;
+    }
+
+    /* PORCION */
+    details.porcion-wrap { margin-top: 8px; }
+    details.porcion-wrap > summary {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: none; border: 1px solid var(--gris-claro); color: var(--gris-medio);
+      border-radius: 14px; padding: 3px 10px; font-size: 12px; font-weight: 600;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    details.porcion-wrap > summary:hover {
+      background: var(--azul-palido); border-color: var(--azul-medio); color: var(--azul-real);
+    }
+    .detalle-porcion {
+      font-size: 13px; color: var(--gris-medio); background: var(--gris-palido);
+      border-left: 3px solid var(--azul-medio); padding: 7px 11px;
+      margin-top: 7px; border-radius: 0 8px 8px 0; line-height: 1.55; animation: fadeIn 0.18s ease;
+    }
+
+    /* PERMITIDOS */
+    .permitido-bloque { background: var(--verde-claro); border-radius: 10px; padding: 11px 13px; margin: 12px 0 4px; }
+    .permitido-titulo { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: var(--verde); margin-bottom: 4px; }
+    .permitido-texto { font-size: 15px; color: #14532d; line-height: 1.5; }
+
+    /* NOTA MONASH */
+    .nota-monash {
+      background: var(--azul-palido); border: 1px solid #93c5fd; border-radius: 10px;
+      padding: 9px 12px; margin: 8px 0; font-size: 13px; color: #1e40af; line-height: 1.5;
+    }
+    .nota-monash strong { color: #1e3a8a; }
+
+    /* ADVERTENCIA */
+    .fila-advertencia { display: flex; align-items: flex-start; gap: 9px; background: #fffbeb; border-radius: 10px; padding: 10px 13px; }
+    .adv-icono { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .adv-texto { font-size: 15px; color: #78350f; line-height: 1.5; }
+    .adv-etiqueta { display: block; font-weight: 800; font-size: 11px; color: #92400e; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 3px; }
+
+    /* NOTAS */
+    .notas-seccion { background: white; border-radius: 14px; padding: 17px; margin-bottom: 11px; box-shadow: var(--sombra); }
+    .notas-seccion h3 { font-size: 15.5px; font-weight: 800; color: var(--azul-real); margin-bottom: 12px; }
+    .nota-item { display: flex; align-items: flex-start; gap: 11px; padding: 9px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; line-height: 1.55; }
+    .nota-item:last-child { border-bottom: none; }
+    .nota-icono { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* FUENTES */
+    .fuentes {
+      background: white; border-radius: 12px; padding: 13px 15px; margin-bottom: 14px;
+      box-shadow: var(--sombra); font-size: 12px; color: var(--gris); text-align: center; line-height: 1.7;
+    }
+    .fuentes strong { color: var(--gris-oscuro); display: block; margin-bottom: 3px; font-size: 13px; }
+
+    /* PIE */
+    .footer { background: var(--negro); color: rgba(255,255,255,0.65); padding: 16px 20px; text-align: center; font-size: 12px; line-height: 1.9; }
+    .footer strong { color: white; font-size: 14px; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #25d366; color: white; text-decoration: none;
+      border-radius: 20px; padding: 6px 16px; font-size: 12.5px; font-weight: 700; margin-top: 10px;
+    }
+
+    @media (min-width: 480px) {
+      body { font-size: 17px; }
+      .header h1 { font-size: 20px; }
+      .texto-evitar { font-size: 18px; }
+      .contenido-alt { font-size: 15.5px; }
+    }
+
+    /* ===== GENERADOR DE MENU ===== */
+    .menu-section { background:white; border-radius:14px; margin-bottom:11px; box-shadow:var(--sombra); overflow:hidden; }
+    .menu-section-header { background:linear-gradient(135deg,#0f1b36 0%,#1e3a8a 100%); color:white; padding:18px 17px 14px; }
+    .menu-section-header h2 { font-size:17px; font-weight:800; margin-bottom:4px; }
+    .menu-section-header p { font-size:12.5px; opacity:0.78; }
+    .menu-body { padding:17px; }
+    .pasos-indicator { display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
+    .paso-dot { width:28px; height:28px; border-radius:50%; background:var(--gris-palido); border:2px solid var(--borde); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--gris); transition:all 0.25s; flex-shrink:0; }
+    .paso-dot.activo { background:var(--azul-real); border-color:var(--azul-real); color:white; }
+    .paso-dot.completado { background:var(--verde-medio); border-color:var(--verde-medio); color:white; }
+    .paso-linea { flex:1; height:2px; background:var(--borde); max-width:50px; transition:background 0.25s; }
+    .paso-linea.completada { background:var(--verde-medio); }
+    .form-paso { display:none; }
+    .form-paso.activo { display:block; animation:fadeIn 0.22s ease; }
+    .paso-titulo { font-size:15px; font-weight:800; color:var(--azul-real); margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--borde); }
+    .form-fila { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:13px; }
+    .form-fila-1 { margin-bottom:13px; }
+    .form-grupo { display:flex; flex-direction:column; gap:5px; }
+    .form-label { font-size:12.5px; font-weight:700; color:var(--gris-oscuro); }
+    .form-input, .form-select { border:1.5px solid var(--borde); border-radius:8px; padding:9px 11px; font-size:15px; font-family:inherit; color:var(--gris-oscuro); background:white; width:100%; transition:border-color 0.15s; -webkit-appearance:none; appearance:none; }
+    .form-input:focus, .form-select:focus { outline:none; border-color:var(--azul-medio); box-shadow:0 0 0 3px rgba(37,99,235,0.12); }
+    .form-hint { font-size:11.5px; color:var(--gris); margin-top:2px; }
+    .check-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px; }
+    .check-item { display:flex; align-items:center; gap:8px; background:var(--gris-palido); border:1.5px solid var(--borde); border-radius:8px; padding:8px 10px; cursor:pointer; font-size:13.5px; color:var(--gris-oscuro); font-weight:600; transition:all 0.15s; }
+    .check-item:has(input:checked) { background:var(--rojo-claro); border-color:var(--rojo); color:var(--rojo); }
+    .check-item input[type="checkbox"] { width:16px; height:16px; accent-color:var(--rojo); flex-shrink:0; }
+    .radio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:4px; }
+    .radio-item { display:flex; flex-direction:column; align-items:center; gap:4px; background:var(--gris-palido); border:2px solid var(--borde); border-radius:10px; padding:10px 6px 8px; cursor:pointer; text-align:center; transition:all 0.15s; }
+    .radio-item:has(input:checked) { background:var(--azul-palido); border-color:var(--azul-medio); }
+    .radio-item input[type="radio"] { display:none; }
+    .radio-emoji { font-size:22px; }
+    .radio-label { font-size:11.5px; font-weight:700; color:var(--gris-oscuro); }
+    .nav-form { display:flex; gap:10px; margin-top:20px; justify-content:space-between; align-items:center; }
+    .btn-nav-sig { background:var(--azul-real); color:white; border:none; border-radius:10px; padding:12px 22px; font-size:14.5px; font-weight:800; cursor:pointer; font-family:inherit; flex:1; transition:background 0.15s; }
+    .btn-nav-sig:hover { background:var(--azul-medio); }
+    .btn-nav-atras { background:var(--gris-palido); color:var(--gris-oscuro); border:1.5px solid var(--borde); border-radius:10px; padding:12px 18px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+    .btn-nav-atras:hover { background:var(--borde); }
+    .tipo-toggle { display:flex; background:var(--gris-palido); border-radius:10px; padding:4px; gap:4px; margin-bottom:18px; }
+    .tipo-btn { flex:1; border:none; background:transparent; border-radius:7px; padding:9px 12px; font-size:13px; font-weight:700; color:var(--gris); cursor:pointer; transition:all 0.2s; font-family:inherit; }
+    .tipo-btn.activo { background:white; color:var(--azul-real); box-shadow:0 1px 4px rgba(0,0,0,0.12); }
+    .cal-card { background:linear-gradient(135deg,#0f1b36 0%,#1e3a8a 100%); border-radius:12px; padding:14px 16px; color:white; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .cal-nombre { font-size:14px; font-weight:800; }
+    .cal-sub { font-size:11px; opacity:0.75; margin-top:2px; }
+    .cal-num { font-size:28px; font-weight:900; line-height:1; }
+    .cal-unit { font-size:11px; opacity:0.75; }
+    .dia-tabs { display:flex; overflow-x:auto; gap:6px; padding-bottom:4px; margin-bottom:14px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+    .dia-tabs::-webkit-scrollbar { display:none; }
+    .dia-tab { flex-shrink:0; border:2px solid var(--borde); background:white; border-radius:8px; padding:6px 13px; font-size:12.5px; font-weight:700; color:var(--gris); cursor:pointer; transition:all 0.15s; font-family:inherit; }
+    .dia-tab.activo { background:var(--azul-real); border-color:var(--azul-real); color:white; }
+    .comidas-dia { display:none; }
+    .comidas-dia.activo { display:flex; flex-direction:column; gap:10px; animation:fadeIn 0.2s ease; }
+    .comida-card { background:var(--fondo); border:1.5px solid var(--borde); border-radius:12px; padding:12px 14px; }
+    .comida-tipo { display:flex; align-items:center; gap:6px; font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.7px; color:var(--gris); margin-bottom:5px; }
+    .comida-tipo-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .comida-nombre { font-size:15px; font-weight:800; color:var(--gris-oscuro); margin-bottom:3px; line-height:1.35; }
+    .comida-cal { font-size:12px; color:var(--gris); font-weight:600; }
+    .sub-section { background:var(--fondo); border-radius:12px; margin-top:16px; overflow:hidden; border:1.5px solid var(--borde); }
+    .sub-section-header { background:var(--azul-palido); border-bottom:1.5px solid var(--azul-claro); padding:11px 14px; font-size:13px; font-weight:800; color:var(--azul-real); display:flex; align-items:center; gap:7px; }
+    .sub-section-body { padding:14px; }
+    .lista-categoria { margin-bottom:14px; }
+    .lista-cat-titulo { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; color:var(--gris); margin-bottom:7px; padding-bottom:5px; border-bottom:1px solid var(--borde); }
+    .lista-items { display:flex; flex-direction:column; gap:5px; }
+    .lista-item { display:flex; align-items:flex-start; gap:8px; font-size:14px; color:var(--gris-oscuro); line-height:1.4; }
+    .lista-check-box { width:16px; height:16px; border:2px solid var(--borde); border-radius:4px; flex-shrink:0; margin-top:1px; background:white; }
+    .receta-card { border-bottom:1px solid var(--borde); padding:13px 0; }
+    .receta-card:last-child { border-bottom:none; padding-bottom:0; }
+    .receta-nombre { font-size:15px; font-weight:800; color:var(--gris-oscuro); margin-bottom:6px; line-height:1.3; }
+    .receta-tipo-badge { display:inline-block; background:var(--azul-claro); color:var(--azul-real); font-size:10px; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; padding:2px 7px; border-radius:4px; margin-bottom:8px; }
+    .receta-ingredientes { background:var(--gris-palido); border-radius:8px; padding:9px 11px; margin-bottom:8px; }
+    .receta-ing-titulo { font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; color:var(--gris); margin-bottom:5px; }
+    .receta-ing-lista { font-size:13px; color:var(--gris-oscuro); line-height:1.7; }
+    .receta-prep { font-size:13.5px; color:var(--gris-oscuro); line-height:1.65; }
+    .receta-nota { background:var(--azul-palido); border-left:3px solid var(--azul-medio); padding:6px 10px; margin-top:7px; font-size:12px; color:#1e40af; border-radius:0 6px 6px 0; }
+    .btn-imprimir { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:18px; background:var(--negro); color:white; border:none; border-radius:10px; padding:13px; font-size:14.5px; font-weight:800; cursor:pointer; font-family:inherit; transition:background 0.15s; }
+    .btn-imprimir:hover { background:var(--gris-oscuro); }
+    .btn-editar { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:10px; background:transparent; color:var(--azul-real); border:2px solid var(--azul-real); border-radius:10px; padding:11px; font-size:13.5px; font-weight:800; cursor:pointer; font-family:inherit; transition:all 0.15s; }
+    .btn-editar:hover { background:var(--azul-palido); }
+    .form-error { font-size:12px; color:var(--rojo); margin-top:3px; display:none; }
+    .form-error.visible { display:block; }
+    .print-header { display:none; }
+
+    @media print {
+      .header,.hero,.container > details,.notas-seccion,.fuentes,.footer,
+      .menu-section-header,.tipo-toggle,.btn-imprimir,.btn-editar,.dia-tabs,
+      .form-paso,.pasos-indicator,#form-area { display:none !important; }
+      .comidas-dia { display:flex !important; }
+      .sub-section { break-inside:avoid; }
+      .menu-section { box-shadow:none; border:none; }
+      .menu-body { padding:0; }
+      .print-header { display:block !important; text-align:center; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid #0f1b36; }
+      .print-header h2 { font-size:20px; font-weight:900; color:#0f1b36; margin-bottom:3px; }
+      .print-header p { font-size:12px; color:#64748b; }
+      .cal-card { background:#0f1b36 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      body { font-size:13px; }
+      .comida-card,.receta-card { break-inside:avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Dr. Hector Hugo Barragan Cordova</h1>
+  <div class="especialidad">Medicina Interna &middot; Gastroenterologia &middot; Endoscopia Gastrointestinal</div>
+  <div class="contactos">
+    <span class="contacto-chip">&#127973; Angeles Universidad &middot; Angeles Pedregal &middot; San Angel Inn HMG</span>
+    <span class="contacto-chip">&#128222; 55 5568-7058 &middot; 55 3683-7574</span>
+    <span class="contacto-chip">&#128241; 55 3204-8657</span>
+    <a class="contacto-wa" href="https://wa.me/525532048657?text=Hola%20Dr.%20Barragan%2C%20tengo%20una%20pregunta%20sobre%20mi%20dieta%20FODMAP" target="_blank">&#128172; WhatsApp</a>
+  </div>
+</div>
+
+<div class="hero">
+  <span class="hero-fase">&#9200; Fase 1 &middot; Restriccion &middot; 4-8 semanas</span>
+  <div class="hero-texto">
+    <h2>Guia de Alimentos FODMAP</h2>
+    <p>Basada en Monash University &middot; Adaptada a Mexico</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="leyenda">
+    <div class="leyenda-item"><span class="badge-evitar">EVITAR</span> Alto en FODMAP</div>
+    <div class="leyenda-item"><span class="flecha-ok">&#8594;</span> Alternativa segura</div>
+    <div class="leyenda-item"><span style="font-size:15px">&#128207;</span> Ver porcion</div>
+  </div>
+
+  <div class="aviso-fase">
+    <span class="aviso-icono">&#8505;&#65039;</span>
+    <div class="aviso-texto">
+      <strong>Esta fase NO es permanente</strong> &mdash; dura 4 a 8 semanas. Despues reintroduciras alimentos uno por uno para identificar cuales si toleras. Tu medico te guiara en ese proceso.
+    </div>
+  </div>
+
+  <!-- 1. LACTEOS -->
+  <details class="categoria" id="cat-lacteos">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#127957;</span> Lacteos y derivados</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Leche de vaca, cabra y oveja &middot; Leche condensada &middot; Helado con lactosa &middot; Natilla</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Leche de almendra sin endulzar &middot; Leche de arroz &middot; Leche de macadamia &middot; Leche sin lactosa (Lala, Alpura) &middot; Leche de avena sin gluten</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Leche de almendra o arroz: 1 taza (250 ml) &middot; Leche sin lactosa: 1 taza (250 ml)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Quesos muy frescos: ricotta, cottage, panela, requesón, mozzarella fresca</span></div>
+        <div class="nota-monash">&#128204; <strong>Aclaracion Monash:</strong> El queso <strong>feta</strong> y la mozzarella tipo bloque o seca son <strong>bajos en FODMAP</strong> &mdash; la salmuera y el curado eliminan la lactosa. Solo se evitan los quesos muy blandos y sin madurar.</div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Queso Oaxaca &middot; Manchego deslactosado &middot; Gouda &middot; Cheddar &middot; Parmesano &middot; <strong>Feta</strong> &middot; Queso de cabra madurado (poca cantidad)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Maximo 40 g por comida (1-2 rebanadas delgadas)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Yogur regular con lactosa &middot; Kefir regular &middot; Crema acida</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Yogur sin lactosa (natural, sin saborizantes) &middot; Yogur de coco sin azucar &middot; Crema de coco enlatada (pequena cantidad) &middot; Mantequilla regular (muy baja en lactosa)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Yogur sin lactosa o de coco: 200 g &middot; Mantequilla: hasta 1 cucharada (13 g)</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 2. VERDURAS -->
+  <details class="categoria" id="cat-verduras">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#129382;</span> Verduras y hortalizas</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Ajo y cebolla en cualquier forma &mdash; frescos, en polvo, deshidratados, fritos o cocidos</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Aceite infusionado con ajo o cebolla (sin los trozos) &middot; Parte verde del cebollin &middot; Cebolleta (solo parte verde)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Cebollin (parte verde): 1/2 taza (16 g) &middot; El aceite infusionado no transfiere FODMAP &mdash; usalo libremente</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Coliflor &middot; Coles de Bruselas &middot; Esparragos &middot; Poro (parte blanca) &middot; Betabel &middot; Tallo de brocoli &middot; Col en exceso</span></div>
+        <div class="nota-monash">&#128204; <strong>Aclaracion Monash:</strong> Las <strong>flores de brocoli</strong> (sin tallo) son bajas en FODMAP hasta 3/4 taza (75 g). El tallo si se debe evitar.</div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Amplia variedad de alternativas</span>Espinaca &middot; Calabacin (zucchini) &middot; Zanahoria &middot; Pimiento morron &middot; Papa hervida &middot; Ejotes &middot; Chayote &middot; Lechuga (cualquier tipo) &middot; Jitomate bola o cherry &middot; Pepino &middot; Apio (tallo, poca cantidad) &middot; Flores de brocoli (3/4 taza) &middot; Kale (poca cantidad) &middot; Cilantro &middot; Perejil &middot; Albahaca</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Espinaca: 1 taza (75 g) &middot; Calabacin: 1/2 taza (65 g) &middot; Zanahoria: 1/2 taza (75 g) &middot; Pimientos: 1/2 taza (52 g) &middot; Papa: 100 g &middot; Ejotes: 1/2 taza (55 g) &middot; Jitomate: 1 mediano (75 g) &middot; Pepino: 1/2 taza (52 g)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Champinones (todos los tipos) &middot; Alcachofas &middot; Setas y hongos</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Berenjena &middot; Calabacin &middot; Jitomate bola o cherry &middot; Pimientos &middot; Espinaca salteada</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Berenjena: 1 taza (75 g) &middot; Calabacin: 1/2 taza (65 g)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Leguminosas: frijoles, lentejas crudas o de olla, chicharos, habas, garbanzos</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Tofu firme &middot; Tempeh &middot; Lentejas de lata bien escurridas y enjuagadas &middot; Garbanzos enlatados enjuagados (porcion pequena)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Lentejas enlatadas enjuagadas: 1/2 taza (46 g) &middot; Garbanzos enlatados enjuagados: 1/4 taza (42 g) &middot; El enjuague reduce los FODMAP significativamente</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 3. FRUTAS -->
+  <details class="categoria" id="cat-frutas">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#127827;</span> Frutas</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Manzana &middot; Pera &middot; Mango &middot; Sandia &middot; Durazno &middot; Chabacano &middot; Cereza &middot; Ciruela &middot; Nectarina &middot; Higo fresco &middot; Lichi &middot; Guayaba en exceso &middot; Platano maduro (muy amarillo)</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Amplia variedad de alternativas</span>Platano verde o pinton &middot; Fresa &middot; Uvas &middot; Kiwi &middot; Pina &middot; Naranja &middot; Mandarina &middot; Melon chino (cantaloupe) &middot; Papaya (porcion pequena) &middot; Lima &middot; Maracuya &middot; Frambuesa &middot; Arandano azul &middot; Melon verde (honeydew, pequena porcion)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Platano verde: 1/2 pieza (56 g) &middot; Fresas: 5 piezas (65 g) &middot; Kiwi: 2 piezas (150 g) &middot; Uvas: 1 taza &middot; Naranja: 1 pieza &middot; Pina: 1 taza &middot; Papaya: 1/2 taza (77 g) &middot; Arandano azul: 1/4 taza (40 g) &middot; Frambuesa: 30 piezas (60 g)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Frutas deshidratadas: pasas &middot; datiles &middot; higos secos &middot; chabacano seco &middot; ciruela pasa &middot; tamarindo concentrado</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativa (cantidades muy pequenas)</span>Arandanos rojos deshidratados &middot; Platano o pina deshidratada sin azucar anadida</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Maximo 1 cucharada (15 g) al dia &mdash; la deshidratacion concentra los azucares fermentables</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Aguacate en cantidad grande (mas de 1/8 de pieza por comida)</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Si se permite en pequena cantidad</span>1/8 de aguacate (30 g) es bajo en FODMAP segun Monash &middot; Aceite de oliva &middot; Aceitunas negras o verdes</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Aguacate: maximo 1/8 pieza (30 g) &mdash; 1/4 ya es moderado en FODMAP &middot; Aceitunas: hasta 15 piezas</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 4. CEREALES -->
+  <details class="categoria" id="cat-cereales">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#127806;</span> Cereales y granos</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Trigo y sus derivados: pan de caja, pasta, galletas, harina, pan dulce &middot; Cebada &middot; Centeno &middot; Espelta</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Pan de masa madre (fermentacion 12+ h) &middot; Arroz blanco o integral &middot; Avena certificada sin gluten &middot; Quinoa &middot; Pasta de arroz o de maiz &middot; Pan de arroz &middot; Amaranto &middot; Mijo &middot; Palomitas de maiz naturales</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Pan masa madre: hasta 2 rebanadas (109 g) &middot; Arroz cocido: 1/2 taza (92 g) &middot; Avena sin gluten: 1/2 taza seca (52 g) &middot; Quinoa cocida: 3/4 taza (125 g) &middot; Palomitas: 1 taza (8 g)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Granola comercial (casi siempre contiene miel, trigo, inulina o endulzantes altos en FODMAP)</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Avena sin gluten en agua &middot; Semillas de chia &middot; Linaza molida &middot; Semillas de girasol o calabaza sin sal</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Chia: 2 cucharaditas (24 g) &middot; Linaza: 1 cucharada (15 g) &middot; Semillas de girasol: 2 cucharadas (16 g)</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Tortilla de maiz en exceso (mas de 2 por comida) &middot; Productos de maiz industriales con aditivos</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Si se permite con moderacion</span>1-2 tortillas de maiz por comida &middot; Tortillas de arroz &middot; Tostadas de arroz sin sal</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">1-2 tortillas de maiz (50 g) por comida &middot; El maiz no es alto en FODMAP &mdash; el problema es la cantidad</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 5. PROTEINAS -->
+  <details class="categoria" id="cat-proteinas">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#127831;</span> Proteinas</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="permitido-bloque">
+        <div class="permitido-titulo">Sin restriccion</div>
+        <div class="permitido-texto">
+          <strong>Carnes y aves:</strong> Res &middot; Cerdo &middot; Pollo &middot; Pavo &middot; Cordero<br>
+          <strong>Pescados y mariscos:</strong> Salmon &middot; Atun &middot; Trucha &middot; Tilapia &middot; Mojarra &middot; Bacalao &middot; Sardinas en agua &middot; Camarones &middot; Cangrejo &middot; Callo de hacha<br>
+          <strong>Huevo:</strong> Cualquier preparacion &mdash; solo evita hacerlo con ajo o cebolla<br>
+          <strong>Proteina vegetal:</strong> Tofu firme &middot; Tempeh
+        </div>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Salchichas comerciales &middot; Embutidos con ajo, cebolla, lactosa o jarabe de maiz de alta fructosa &middot; Carnes marinadas con ajo o cebolla</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativa &mdash; lee la etiqueta</span>Salchichas sin aditivos FODMAP &middot; Jamon de pierna natural &middot; Pechuga de pavo sin conservadores &middot; Atun en agua sin aderezos</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">50-100 g por comida &middot; Evita si la etiqueta dice: "cebolla", "ajo", "jarabe de maiz", "sorbitol" o "inulina"</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 6. FRUTOS SECOS -->
+  <details class="categoria" id="cat-nueces">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#129384;</span> Frutos secos y semillas</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Anacardos (nuez de la india) &middot; Pistaches &middot; Avellanas en grandes cantidades</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Almendras (hasta 10 piezas) &middot; Nueces de castilla &middot; Nueces de macadamia &middot; Nuez pecana &middot; Cacahuates (moderacion) &middot; Semillas de chia &middot; Pepitas de calabaza &middot; Semillas de girasol &middot; Ajonjoli (poca cantidad)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Almendras: max. 10 piezas (12 g) &middot; Macadamias: 20 g &middot; Cacahuates: 32 g &middot; Pepitas: 2 cucharadas (16 g) &middot; Semillas de girasol: 2 cucharadas (16 g)</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- 7. AZUCARES -->
+  <details class="categoria" id="cat-azucar">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#127852;</span> Azucares y edulcorantes</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Miel de abeja &middot; Jarabe de agave &middot; Jarabe de maiz de alta fructosa &middot; Fructosa pura &middot; Inulina (revisa etiquetas)</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Jarabe de arce puro (maple) &middot; Azucar de mesa (sacarosa) &middot; Stevia natural &middot; Glucosa &middot; Piloncillo en cantidades minimas</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Jarabe de arce: max. 1 cucharada (20 g) por ocasion &middot; Azucar de mesa: cantidades normales de cocina son aceptadas</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Chicles y caramelos "sin azucar" con: sorbitol, manitol, xilitol, isomalt, lactitol, maltitol</span></div>
+        <div class="fila-advertencia"><span class="adv-icono">&#9888;&#65039;</span><div class="adv-texto"><span class="adv-etiqueta">Recomendacion</span>Evitar completamente durante la fase de restriccion. Busca chicles sin polialcoholes en la etiqueta.</div></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- 8. BEBIDAS -->
+  <details class="categoria" id="cat-bebidas">
+    <summary><div class="cat-titulo"><span class="cat-emoji">&#129367;</span> Bebidas</div><span class="chevron">&#9662;</span></summary>
+    <div class="cat-body">
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Te de manzanilla &middot; Jugos de fruta &middot; Leche de soya convencional &middot; Bebidas energeticas &middot; Agua de coco en exceso &middot; Kombucha</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativas</span>Agua natural &middot; Agua mineral sin sabor &middot; Te de jengibre &middot; Te de menta o hierbabuena &middot; Te verde suave &middot; Te rooibos &middot; Agua de limon natural &middot; Agua con pepino &middot; Agua de jamaica sin azucar (moderacion)</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Agua: minimo 1.5-2 litros al dia &middot; Te de hierbas: 1-2 tazas (250 ml) al dia</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Cafe en exceso (mas de 1 taza al dia puede irritar el intestino)</span></div>
+        <div class="fila-alt"><span class="flecha-ok">&#8594;</span><div class="contenido-alt"><span class="etiqueta-alt">Alternativa</span>Cafe descafeinado &middot; Cafe regular en moderacion &mdash; usar leche de almendra o sin lactosa en lugar de leche de vaca</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Maximo 1 taza (180 ml) al dia &middot; La cafeina irrita el intestino aunque el cafe no sea alto en FODMAP</div></details>
+      </div>
+      <div class="alimento">
+        <div class="fila-evitar"><span class="badge-evitar">Evitar</span><span class="texto-evitar">Cerveza &middot; Vino dulce &middot; Bebidas fermentadas &middot; Mezcladores azucarados</span></div>
+        <div class="fila-advertencia"><span class="adv-icono">&#9888;&#65039;</span><div class="adv-texto"><span class="adv-etiqueta">Si se consume alcohol (mucha moderacion)</span>Vino tinto o blanco seco &middot; Vodka o gin puros sin mezcladores. Lo ideal es evitar completamente esta fase.</div></div>
+        <details class="porcion-wrap"><summary>&#128207; Ver porcion</summary><div class="detalle-porcion">Vino seco: max. 1 copa (150 ml) esporadicamente &middot; Destilados puros: 30 ml</div></details>
+      </div>
+    </div>
+  </details>
+
+  <!-- RECOMENDACIONES -->
+  <div class="notas-seccion">
+    <h3>&#128203; Recomendaciones importantes <span style="font-size:12.5px;font-weight:500;color:var(--gris)">(Universidad de Monash)</span></h3>
+    <div class="nota-item"><span class="nota-icono">&#128167;</span><span><strong>Agua:</strong> Minimo 1.5 a 2 litros al dia. Ayuda a la digestion y previene el estrenimiento.</span></div>
+    <div class="nota-item"><span class="nota-icono">&#127859;</span><span><strong>Grasas en exceso:</strong> Los alimentos fritos y muy grasosos lentifican la digestion y empeoran la hinchazon y el reflujo, aunque no sean altos en FODMAP. Preferir vapor, hervido, asado o plancha.</span></div>
+    <div class="nota-item"><span class="nota-icono">&#127991;&#65039;</span><span><strong>Lee las etiquetas:</strong> Busca en ingredientes: "inulina", "fructosa", "sorbitol", "manitol", "xilitol" o "jarabe de maiz" &mdash; son FODMAP ocultos en productos industriales.</span></div>
+    <div class="nota-item"><span class="nota-icono">&#9749;</span><span><strong>Cafeina y alcohol:</strong> Irritan el intestino aunque sean bajos en FODMAP. Limitalos segun tu tolerancia.</span></div>
+    <div class="nota-item"><span class="nota-icono">&#129504;</span><span><strong>Estres y sueno:</strong> El intestino es muy sensible al estres. Dormir bien y manejar el estres forma parte del tratamiento.</span></div>
+    <div class="nota-item"><span class="nota-icono">&#128260;</span><span><strong>Esta fase NO es para siempre.</strong> Despues de 4-8 semanas reintroduciras alimentos gradualmente. La meta es la dieta mas variada posible.</span></div>
+  </div>
+
+  <div class="fuentes">
+    <strong>Fuentes cientificas</strong>
+    Universidad de Monash (monashfodmap.com) &middot; Halmos et al., Gastroenterology 2014 (Metaanalisis, Nivel Ia) &middot; Staudacher et al., Nat. Rev. Gastroenterol. Hepatol. 2014 &middot; Schumann et al., Clin. Gastroenterol. Hepatol. 2018 &middot; INCMNSZ &middot; MedlinePlus
+  </div>
+
+</div>
+
+<div class="container">
+<div class="menu-section">
+  <div class="menu-section-header">
+    <h2>&#127859; Generador de Men&uacute; Personalizado</h2>
+    <p>Calcula tus calor&iacute;as y obt&eacute;n un men&uacute; diario o semanal 100% bajo en FODMAP</p>
+  </div>
+  <div class="menu-body">
+
+    <div class="print-header">
+      <h2>Men&uacute; FODMAP Personalizado</h2>
+      <p>Dr. H&eacute;ctor Hugo Barrag&aacute;n C&oacute;rdova &bull; Gastroenterolog&iacute;a</p>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div id="form-area">
+      <div class="pasos-indicator">
+        <div class="paso-dot activo" id="dot-1">1</div>
+        <div class="paso-linea" id="linea-1-2"></div>
+        <div class="paso-dot" id="dot-2">2</div>
+        <div class="paso-linea" id="linea-2-3"></div>
+        <div class="paso-dot" id="dot-3">3</div>
+      </div>
+
+      <!-- PASO 1 -->
+      <div class="form-paso activo" id="paso-1">
+        <div class="paso-titulo">&#128100; Datos personales</div>
+        <div class="form-fila-1">
+          <div class="form-grupo">
+            <label class="form-label">Nombre (opcional)</label>
+            <input class="form-input" type="text" id="f-nombre" placeholder="Tu nombre">
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-grupo">
+            <label class="form-label">Sexo *</label>
+            <select class="form-select" id="f-sexo">
+              <option value="">-- Selecciona --</option>
+              <option value="H">Hombre</option>
+              <option value="M">Mujer</option>
+            </select>
+            <div class="form-error" id="err-sexo">Selecciona tu sexo</div>
+          </div>
+          <div class="form-grupo">
+            <label class="form-label">Edad *</label>
+            <input class="form-input" type="number" id="f-edad" placeholder="Ej. 35" min="15" max="100">
+            <div class="form-error" id="err-edad">Ingresa tu edad (15-100)</div>
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-grupo">
+            <label class="form-label">Peso (kg) *</label>
+            <input class="form-input" type="number" id="f-peso" placeholder="Ej. 70" min="30" max="300" step="0.5">
+            <div class="form-error" id="err-peso">Ingresa tu peso</div>
+          </div>
+          <div class="form-grupo">
+            <label class="form-label">Estatura (cm) *</label>
+            <input class="form-input" type="number" id="f-talla" placeholder="Ej. 165" min="100" max="250">
+            <div class="form-error" id="err-talla">Ingresa tu estatura</div>
+          </div>
+        </div>
+        <div class="nav-form">
+          <span></span>
+          <button class="btn-nav-sig" onclick="siguientePaso(1)">Continuar &#8594;</button>
+        </div>
+      </div>
+
+      <!-- PASO 2 -->
+      <div class="form-paso" id="paso-2">
+        <div class="paso-titulo">&#127939; Estilo de vida</div>
+        <div class="form-fila-1">
+          <div class="form-grupo">
+            <label class="form-label">Nivel de actividad f&iacute;sica *</label>
+            <select class="form-select" id="f-actividad">
+              <option value="">-- Selecciona --</option>
+              <option value="1.2">Sedentario (poco o nada de ejercicio)</option>
+              <option value="1.375">Ligeramente activo (1-3 d&iacute;as/semana)</option>
+              <option value="1.55">Moderadamente activo (3-5 d&iacute;as/semana)</option>
+              <option value="1.725">Muy activo (6-7 d&iacute;as/semana)</option>
+            </select>
+            <div class="form-error" id="err-actividad">Selecciona tu nivel de actividad</div>
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-grupo">
+            <label class="form-label">Comidas al d&iacute;a *</label>
+            <select class="form-select" id="f-comidas">
+              <option value="">-- Selecciona --</option>
+              <option value="3">3 comidas principales</option>
+              <option value="5">5 comidas (incluye colaciones)</option>
+            </select>
+            <div class="form-error" id="err-comidas">Selecciona el n&uacute;mero de comidas</div>
+          </div>
+          <div class="form-grupo">
+            <label class="form-label">Objetivo</label>
+            <select class="form-select" id="f-objetivo">
+              <option value="0">Mantener peso</option>
+              <option value="-300">Bajar de peso (leve)</option>
+              <option value="-500">Bajar de peso (moderado)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-fila-1">
+          <div class="form-grupo">
+            <label class="form-label">Tipo de alimentaci&oacute;n</label>
+            <div class="radio-grid">
+              <label class="radio-item">
+                <input type="radio" name="dieta" value="omnivoro" checked>
+                <span class="radio-emoji">&#127829;</span>
+                <span class="radio-label">Omn&iacute;voro</span>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="dieta" value="vegetariano">
+                <span class="radio-emoji">&#127807;</span>
+                <span class="radio-label">Vegetariano</span>
+              </label>
+              <label class="radio-item">
+                <input type="radio" name="dieta" value="vegano">
+                <span class="radio-emoji">&#127793;</span>
+                <span class="radio-label">Vegano</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="nav-form">
+          <button class="btn-nav-atras" onclick="anteriorPaso(2)">&#8592; Atr&aacute;s</button>
+          <button class="btn-nav-sig" onclick="siguientePaso(2)">Continuar &#8594;</button>
+        </div>
+      </div>
+
+      <!-- PASO 3 -->
+      <div class="form-paso" id="paso-3">
+        <div class="paso-titulo">&#9888; Alergias y restricciones</div>
+        <div class="form-fila-1">
+          <div class="form-grupo">
+            <label class="form-label">Marca si eres al&eacute;rgico o intolerante a:</label>
+            <div class="form-hint" style="margin-bottom:8px">Selecciona todos los que apliquen</div>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" id="al-cacahuate"> Cacahuate</label>
+              <label class="check-item"><input type="checkbox" id="al-nueces"> Nueces / Almendras</label>
+              <label class="check-item"><input type="checkbox" id="al-mariscos"> Mariscos</label>
+              <label class="check-item"><input type="checkbox" id="al-huevo"> Huevo</label>
+              <label class="check-item"><input type="checkbox" id="al-lacteos"> L&aacute;cteos / Lactosa</label>
+              <label class="check-item"><input type="checkbox" id="al-pescado"> Pescado</label>
+              <label class="check-item"><input type="checkbox" id="al-soya"> Soya</label>
+              <label class="check-item"><input type="checkbox" id="al-ajonjoli"> Ajonjol&iacute;</label>
+            </div>
+          </div>
+        </div>
+        <div class="nav-form">
+          <button class="btn-nav-atras" onclick="anteriorPaso(3)">&#8592; Atr&aacute;s</button>
+          <button class="btn-nav-sig" onclick="generarMenu()">&#127859; Generar mi men&uacute;</button>
+        </div>
+      </div>
+    </div><!-- /form-area -->
+
+    <!-- RESULTADOS -->
+    <div id="resultado-area" style="display:none">
+      <div class="cal-card" id="cal-card-display"></div>
+      <div class="tipo-toggle">
+        <button class="tipo-btn activo" id="btn-diario" onclick="verTipo('diario')">&#9728; Men&uacute; del d&iacute;a</button>
+        <button class="tipo-btn" id="btn-semanal" onclick="verTipo('semanal')">&#128197; Men&uacute; semanal (7 d&iacute;as)</button>
+      </div>
+
+      <!-- DIARIO -->
+      <div id="vista-diario">
+        <div id="comidas-diario" class="comidas-dia activo"></div>
+        <div class="sub-section">
+          <div class="sub-section-header">&#128722; Lista de alimentos del d&iacute;a</div>
+          <div class="sub-section-body" id="lista-diario-body"></div>
+        </div>
+        <div class="sub-section">
+          <div class="sub-section-header">&#128218; Recetas y preparaci&oacute;n</div>
+          <div class="sub-section-body" id="recetas-diario-body"></div>
+        </div>
+      </div>
+
+      <!-- SEMANAL -->
+      <div id="vista-semanal" style="display:none">
+        <div class="dia-tabs" id="dia-tabs"></div>
+        <div id="dias-contenido"></div>
+        <div class="sub-section">
+          <div class="sub-section-header">&#128722; Lista de compras semanal</div>
+          <div class="sub-section-body" id="lista-semanal-body"></div>
+        </div>
+        <div class="sub-section">
+          <div class="sub-section-header">&#128218; Todas las recetas de la semana</div>
+          <div class="sub-section-body" id="recetas-semanal-body"></div>
+        </div>
+      </div>
+
+      <button class="btn-imprimir" onclick="imprimirMenu()">&#128424; Descargar / Imprimir PDF</button>
+      <button class="btn-editar" onclick="editarDatos()">&#9998; Editar mis datos</button>
+    </div><!-- /resultado-area -->
+
+  </div><!-- /menu-body -->
+</div><!-- /menu-section -->
+</div><!-- /container -->
+
+<div class="footer">
+  <strong>Dr. Hector Hugo Barragan Cordova</strong><br>
+  Cedula Profesional 4784900 &middot; Cedula Esp. 7876212 &middot; Cedula Esp. 8025889<br>
+  &#128222; 55 5568-7058 &middot; 55 3683-7574 &middot; &#128241; 55 3204-8657<br>
+  <a class="btn-wa" href="https://wa.me/525532048657?text=Hola%20Dr.%20Barragan%2C%20tengo%20una%20pregunta%20sobre%20mi%20dieta%20FODMAP" target="_blank">
+    &#128172; Escribir al Dr. por WhatsApp
+  </a>
+</div>
+
+<script>
+// ============================================================
+// BASE DE DATOS FODMAP — Validada Monash University
+// ============================================================
+var PLATILLOS = {
+  desayunos: [
+    { id:'D1', nombre:'Huevos revueltos con jitomate y tortillas de maíz', calorias:320, vegetariano:true, vegano:false, alergenos:['huevo'],
+      ingredientes:['2 huevos grandes','2 tortillas de maíz pequeñas','1 jitomate mediano en cubos','1 cdita de aceite de oliva','Cebollín (parte verde) al gusto','Sal y pimienta al gusto'],
+      preparacion:'Calienta el aceite en sartén a fuego medio. Bate los huevos con sal y pimienta. Vierte en la sartén y revuelve suavemente hasta que estén cocidos pero aún húmedos. Agrega el jitomate y el cebollín picado. Sirve inmediatamente con las tortillas calientes.',
+      nota:'Usa solo la parte verde del cebollín para mantener el platillo bajo en FODMAP.' },
+    { id:'D2', nombre:'Avena cremosa con fresas y leche sin lactosa', calorias:285, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['1/4 taza (25g) de avena en hojuelas','1/2 taza de leche sin lactosa','1/2 taza de agua','1/2 taza de fresas frescas en mitades','1 cdita de semillas de chía','1 cdita de miel de maple (opcional)'],
+      preparacion:'Mezcla la avena con la leche y el agua en una olla pequeña. Cocina a fuego medio-bajo, moviendo constantemente por 5-7 minutos hasta que espese. Sirve en tazón y decora con fresas y semillas de chía. Añade miel de maple al gusto.',
+      nota:'Mantén la porción de avena en 1/4 de taza (seca) para que sea baja en FODMAP.' },
+    { id:'D3', nombre:'Quesadilla de maíz con espinaca y queso cheddar', calorias:355, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['2 tortillas de maíz medianas','40g de queso cheddar rallado','1/2 taza de espinacas baby','1 cdita de aceite de oliva','Sal al gusto'],
+      preparacion:'Calienta una sartén a fuego medio. Coloca una tortilla, agrega el queso y las espinacas, cubre con la otra tortilla. Cocina 2-3 minutos por cada lado hasta que el queso se derrita y las tortillas estén doradas. Corta en triángulos y sirve.',
+      nota:'Los quesos maduros como el cheddar son bajos en lactosa y aptos para la dieta FODMAP.' },
+    { id:'D4', nombre:'Yogurt sin lactosa con fresas y semillas de chía', calorias:245, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['150g de yogurt natural sin lactosa','3/4 taza de fresas frescas en cubos','1 cdita de semillas de chía','1 cda de granola sin trigo (opcional)','1 cdita de miel de maple'],
+      preparacion:'Sirve el yogurt en un tazón. Agrega las fresas, espolvorea las semillas de chía y la granola. Termina con un chorrito de miel de maple.',
+      nota:'Verifica que la granola no contenga trigo ni miel de agave.' },
+    { id:'D5', nombre:'Tostadas de maíz con mantequilla de cacahuate y plátano', calorias:305, vegetariano:true, vegano:true, alergenos:['cacahuate'],
+      ingredientes:['3 tostadas de maíz delgadas','2 cdas de mantequilla de cacahuate natural','1/2 plátano firme en rebanadas','1 pizca de canela'],
+      preparacion:'Unta la mantequilla de cacahuate sobre las tostadas. Coloca las rebanadas de plátano encima y espolvorea la canela. Sirve de inmediato.',
+      nota:'Usa plátano firme (no muy maduro). La mantequilla de cacahuate no debe contener ajo ni cebolla en polvo.' },
+    { id:'D6', nombre:'Smoothie de plátano, fresas y leche de almendra', calorias:270, vegetariano:true, vegano:true, alergenos:['nueces'],
+      ingredientes:['1/2 plátano mediano firme','1 taza de fresas congeladas o frescas','1 taza (250 ml) de leche de almendra sin endulzar','1 cdita de semillas de chía','Cubos de hielo (opcional)'],
+      preparacion:'Coloca todos los ingredientes en la licuadora. Licua a velocidad alta durante 1 minuto hasta obtener una mezcla suave y homogénea. Sirve inmediatamente.',
+      nota:'La leche de almendra (250 ml) es baja en FODMAP. Usa 1/2 plátano para mantener la porción adecuada.' },
+    { id:'D7', nombre:'Salmón con huevo cocido y arroz', calorias:395, vegetariano:false, vegano:false, alergenos:['pescado','huevo'],
+      ingredientes:['80g de salmón al vapor o ahumado','2 huevos cocidos','1/2 taza de arroz blanco cocido','1 cdita de aceite de oliva','Jugo de 1/2 limón','Cebollín (parte verde) al gusto'],
+      preparacion:'Sirve el arroz en el plato. Coloca el salmón al lado y los huevos cortados en mitades. Rocía con aceite de oliva y jugo de limón. Decora con cebollín picado.',
+      nota:'El salmón es completamente libre de FODMAP y rico en ácidos grasos omega-3.' },
+    { id:'D8', nombre:'Hotcakes de harina de arroz con maple y fresas', calorias:375, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
+      ingredientes:['1/2 taza de harina de arroz','1/2 taza de leche sin lactosa','1 huevo','1 cdita de polvo para hornear (sin gluten)','1 cdita de aceite de coco','1 cda de miel de maple','1/2 taza de fresas para acompañar'],
+      preparacion:'Mezcla la harina, polvo para hornear y una pizca de sal. Agrega el huevo batido, la leche y el aceite. Mezcla hasta obtener una masa suave. Calienta sartén antiadherente a fuego medio-bajo. Vierte 1/4 de taza por hotcake y cocina 2-3 minutos por lado hasta dorar. Sirve con fresas y miel de maple.',
+      nota:'Usa harina de arroz pura, no mezclas preparadas que puedan contener trigo.' }
+  ],
+  comidas: [
+    { id:'C1', nombre:'Pechuga de pollo asada con arroz y zanahorias al vapor', calorias:485, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['150g de pechuga de pollo','1/2 taza de arroz blanco cocido','1 zanahoria mediana en rodajas','2 cditas de aceite de oliva','Jugo de 1 limón','Orégano, sal y pimienta al gusto','Cebollín (parte verde) picado'],
+      preparacion:'Marina el pollo con aceite, jugo de limón, orégano, sal y pimienta por 15 minutos. Asa en sartén o plancha a fuego medio-alto, 6-7 minutos por lado, hasta que esté cocido. Cuece las zanahorias al vapor por 8-10 minutos. Sirve con arroz blanco y espolvorea cebollín.',
+      nota:'Evita marinadas comerciales que contengan cebolla o ajo en polvo.' },
+    { id:'C2', nombre:'Sopa de arroz con verduras FODMAP', calorias:375, vegetariano:true, vegano:true, alergenos:[],
+      ingredientes:['1/3 taza de arroz blanco','1 zanahoria en cubos','1 papa mediana en cubos','2 tazas de caldo de verduras (sin ajo/cebolla)','1/2 taza de espinacas','1 cdita de aceite de ajo infusionado','Sal, orégano y pimienta al gusto'],
+      preparacion:'En una olla, calienta el aceite de ajo infusionado. Agrega el caldo, la zanahoria y la papa. Hierve a fuego medio por 10 minutos. Agrega el arroz y cocina 15 minutos más. Incorpora las espinacas al final y cocina 2 minutos. Sazona al gusto.',
+      nota:'Aceite de ajo infusionado: calienta aceite con dientes de ajo, retira el ajo antes de usar. El aceite absorbe el sabor sin los FODMAPs.' },
+    { id:'C3', nombre:'Ensalada de atún con tostadas de maíz', calorias:385, vegetariano:false, vegano:false, alergenos:['pescado'],
+      ingredientes:['1 lata (140g) de atún en agua escurrido','2 tazas de lechuga romana picada','10 jitomates cherry en mitades','1/2 pepino en rodajas','2 cdas de aceite de oliva','Jugo de 1 limón','4 tostadas de maíz','Sal y pimienta al gusto'],
+      preparacion:'Mezcla el atún con el aceite de oliva, jugo de limón, sal y pimienta. Sirve sobre la lechuga, agrega jitomates cherry y pepino. Acompaña con tostadas de maíz al lado.',
+      nota:'Verifica que el atún enlatado no contenga salsas con ajo o cebolla.' },
+    { id:'C4', nombre:'Bistec a la plancha con papa y brócoli', calorias:520, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['150g de bistec de res','1 papa mediana','1 taza de floretes de brócoli (75g)','1 cda de aceite de oliva','Sal, pimienta y orégano al gusto','Jugo de limón al gusto'],
+      preparacion:'Cuece la papa entera al horno (200°C, 45 min) o en microondas (8 min). Blanquea el brócoli en agua hirviendo 3-4 minutos. Marina el bistec con aceite, sal y pimienta. Asa en plancha caliente 3-4 minutos por lado. Sirve con la papa abierta y el brócoli con jugo de limón.',
+      nota:'Solo usa las flores de brócoli (no el tallo) y mantén la porción en 3/4 de taza (75g) máximo.' },
+    { id:'C5', nombre:'Tacos de pollo al limón en tortillas de maíz', calorias:440, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['130g de pechuga de pollo en tiras','4 tortillas de maíz pequeñas','1 taza de lechuga en tiras','10 jitomates cherry en mitades','1/2 limón','1 cdita de aceite de ajo infusionado','Sal, comino y orégano al gusto','Cebollín (parte verde) picado'],
+      preparacion:'Salpimienta las tiras de pollo con comino y orégano. Saltea en sartén con aceite de ajo infusionado por 8-10 minutos hasta dorar. Calienta las tortillas en comal. Arma los tacos con el pollo, lechuga, jitomates y cebollín. Exprime limón al gusto.',
+      nota:'El aceite de ajo infusionado aporta sabor sin los FODMAPs del ajo directo.' },
+    { id:'C6', nombre:'Caldo de pollo con verduras y arroz', calorias:365, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['120g de pechuga de pollo en cubos','1/4 taza de arroz blanco','1 zanahoria en rodajas','1 papa pequeña en cubos','1/2 taza de acelgas picadas','2 tazas de caldo sin ajo/cebolla','Sal, pimienta, orégano y epazote al gusto'],
+      preparacion:'Pon el pollo en la olla con agua y lleva a hervor. Retira la espuma. Agrega la zanahoria, papa, orégano y sal. Cocina 15 minutos. Incorpora el arroz y las acelgas. Cocina 15 minutos más. Sirve caliente.',
+      nota:'El epazote es libre de FODMAP y aporta sabor típico mexicano.' },
+    { id:'C7', nombre:'Salmón al horno con ensalada de espinacas', calorias:415, vegetariano:false, vegano:false, alergenos:['pescado'],
+      ingredientes:['150g de filete de salmón','2 tazas de espinacas baby','10 jitomates cherry','1/4 pepino en rodajas','2 cdas de aceite de oliva','Jugo de 1 limón','Sal, pimienta y eneldo al gusto'],
+      preparacion:'Precalienta el horno a 200°C. Coloca el salmón en papel aluminio, saóóna con sal, pimienta y eneldo, rocía con aceite y jugo de limón. Envuelve y hornea 15-18 minutos. Mezcla las espinacas, jitomates y pepino con vinagreta de aceite y limón. Sirve el salmón sobre la ensalada.',
+      nota:'El salmón es excelente fuente de proteína sin FODMAP y rico en omega-3.' },
+    { id:'C8', nombre:'Pasta de arroz con salsa de jitomate y pollo', calorias:475, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['80g de pasta de arroz','100g de pechuga de pollo en cubos','3 jitomates medianos en cubos','1 cda de aceite de ajo infusionado','1/2 taza de espinacas','Orégano, albahaca, sal y pimienta','30g de queso parmesano rallado (opcional)'],
+      preparacion:'Cuece la pasta en agua con sal según instrucciones (6-8 min). Saltea el pollo en aceite de ajo infusionado hasta dorar. Agrega el jitomate, orégano y albahaca. Cocina 10 minutos. Incorpora las espinacas 2 minutos más. Mezcla con la pasta escurrida. Sirve con queso parmesano.',
+      nota:'Usa pasta 100% de arroz. El parmesano maduro es bajo en lactosa.' },
+    { id:'C9', nombre:'Arroz con huevo estrellado y verduras salteadas', calorias:390, vegetariano:true, vegano:false, alergenos:['huevo'],
+      ingredientes:['1 taza de arroz cocido','2 huevos','1 zanahoria rallada','1/2 taza de espinacas','10 jitomates cherry','2 cditas de aceite de ajo infusionado','1 cdita de salsa de soya sin gluten (tamari)','Sal y pimienta al gusto'],
+      preparacion:'Saltea la zanahoria y jitomates en sartén con aceite de ajo infusionado por 3-4 minutos. Agrega las espinacas y el arroz, mezcla bien. Añade el tamari. En sartén aparte, estrella los huevos con un poco de aceite. Sirve el arroz con verduras y el huevo encima.',
+      nota:'El tamari (salsa de soya sin trigo) es libre de gluten y bajo en FODMAP en cantidades pequeñas.' }
+  ],
+  cenas: [
+    { id:'CE1', nombre:'Crema de zanahoria con tostadas de maíz', calorias:285, vegetariano:true, vegano:true, alergenos:[],
+      ingredientes:['3 zanahorias medianas en trozos','1 papa pequeña en cubos','2 tazas de caldo de verduras (sin ajo/cebolla)','1 cda de aceite de oliva','Sal, pimienta y comino al gusto','4 tostadas de maíz','Cebollín (parte verde) para decorar'],
+      preparacion:'Cuece la zanahoria y la papa en el caldo por 20 minutos hasta que estén suaves. Licua con el aceite de oliva hasta obtener una crema suave. Sazona con sal, pimienta y comino. Si queda muy espesa, agrega más caldo. Sirve caliente con tostadas de maíz y cebollín.',
+      nota:'Crema libre de FODMAP, reconfortante y fácil de digerir.' },
+    { id:'CE2', nombre:'Pollo al limón con ensalada de lechuga y pepino', calorias:340, vegetariano:false, vegano:false, alergenos:[],
+      ingredientes:['130g de pechuga de pollo rebanada','2 tazas de lechuga romana','1/2 pepino en rodajas','10 jitomates cherry','1 cda de aceite de oliva','Jugo de 1 limón','Sal, pimienta y orégano al gusto'],
+      preparacion:'Saóóna el pollo con sal, pimienta y orégano. Asa en sartén con aceite, 5-6 minutos por lado. Exprime limón al final. Mezcla la lechuga, pepino y jitomates. Prepara vinagreta con aceite y limón. Sirve la ensalada con el pollo encima.',
+      nota:'Cena ligera y balanceada, perfecta para una digestión tranquila en la noche.' },
+    { id:'CE3', nombre:'Omelette de espinacas y queso feta', calorias:365, vegetariano:true, vegano:false, alergenos:['huevo','lacteos'],
+      ingredientes:['3 huevos','1/2 taza de espinacas baby','40g de queso feta desmenuzado','1 cdita de aceite de oliva','Sal y pimienta al gusto','1/2 taza de arroz blanco (guarnición)'],
+      preparacion:'Bate los huevos con sal y pimienta. Calienta aceite en sartén a fuego medio-bajo. Vierte los huevos y deja cuajar la base sin mover (1-2 min). Agrega las espinacas y el feta sobre la mitad del omelette. Dobla por la mitad y cocina 1 minuto más. Sirve con arroz.',
+      nota:'El queso feta es bajo en lactosa y apto para FODMAP en porciones de hasta 40g.' },
+    { id:'CE4', nombre:'Sopa de verduras FODMAP con tortillas tostadas', calorias:255, vegetariano:true, vegano:true, alergenos:[],
+      ingredientes:['1 zanahoria en cubos','1 papa pequeña en cubos','1/2 taza de acelgas picadas','2 tazas de caldo de verduras (sin ajo/cebolla)','1 cdita de aceite de ajo infusionado','2 tortillas de maíz cortadas en tiras y tostadas','Sal, orégano y pimienta al gusto'],
+      preparacion:'Calienta el aceite en olla, agrega las verduras y saltea 2 minutos. Añade el caldo y hierve a fuego medio 15 minutos. Incorpora las acelgas y cocina 5 minutos más. Sazona. Tuesta las tiras de tortilla en horno o sartén seco hasta que estén crujientes. Sirve la sopa con las tiras encima.',
+      nota:'Sopa muy ligera y digestiva, ideal para la noche.' },
+    { id:'CE5', nombre:'Atún con arroz y pepino', calorias:295, vegetariano:false, vegano:false, alergenos:['pescado'],
+      ingredientes:['1 lata (100g) de atún en agua escurrido','1/2 taza de arroz blanco cocido','1/2 pepino en rodajas','5 jitomates cherry','1 cda de aceite de oliva','Jugo de limón al gusto','Sal y pimienta al gusto'],
+      preparacion:'Mezcla el atún con aceite de oliva, jugo de limón y sazona. Sirve sobre el arroz. Coloca el pepino y jitomates al lado. Puedes añadir un poco más de limón al arroz.',
+      nota:'Cena sencilla, baja en calorías y con buena fuente de proteína.' },
+    { id:'CE6', nombre:'Chilaquiles de maíz con jitomate y queso cotija', calorias:350, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['6 tortillas de maíz cortadas en triángulos y tostadas','3 jitomates medianos','1 cda de aceite de ajo infusionado','30g de queso cotija o feta rallado','Sal, orégano y pimienta al gusto','Cebollín (parte verde) al gusto'],
+      preparacion:'Tuesta los triángulos de tortilla al horno (180°C, 12 min) hasta que estén crujientes. Licua los jitomates con sal y orégano. Calienta el aceite en sartén, vierte la salsa y cocina 8 minutos. Agrega las tortillas tostadas y mezcla. Sirve inmediatamente con queso y cebollín.',
+      nota:'Usa tortillas de maíz puras, sin adición de trigo.' },
+    { id:'CE7', nombre:'Sardinas al limón con papa al vapor y acelgas', calorias:315, vegetariano:false, vegano:false, alergenos:['pescado'],
+      ingredientes:['1 lata de sardinas en aceite de oliva','1 papa mediana cocida en cubos','1 taza de acelgas cocidas al vapor','Jugo de 1 limón','1 cdita de aceite de oliva','Sal, pimienta y orégano al gusto'],
+      preparacion:'Cuece la papa en agua con sal por 15 minutos. Cuece las acelgas al vapor por 5 minutos. Sirve en plato las sardinas escurridas, acompaña con papa y acelgas. Rocía todo con jugo de limón y aceite de oliva. Sazona al gusto.',
+      nota:'Las sardinas son libres de FODMAP y ricas en omega-3 y calcio.' }
+  ],
+  colaciones: [
+    { id:'CO1', nombre:'Fresas con yogurt sin lactosa', calorias:125, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['100g de yogurt natural sin lactosa','1 taza de fresas frescas','1 cdita de miel de maple'],
+      preparacion:'Sirve el yogurt en un tazón pequeño. Agrega las fresas enteras o en mitades y termina con la miel de maple.',
+      nota:'Snack rico en probiticos, vitamina C y proteína.' },
+    { id:'CO2', nombre:'Tostadas de maíz con mantequilla de cacahuate', calorias:155, vegetariano:true, vegano:true, alergenos:['cacahuate'],
+      ingredientes:['2 tostadas de maíz','1.5 cdas de mantequilla de cacahuate natural','1 pizca de canela o semillas de chía (opcional)'],
+      preparacion:'Unta la mantequilla de cacahuate sobre las tostadas. Espolvorea canela o chía si gustas.',
+      nota:'Snack saciante con proteína vegetal y grasa saludable.' },
+    { id:'CO3', nombre:'Plátano firme con almendras', calorias:165, vegetariano:true, vegano:true, alergenos:['nueces'],
+      ingredientes:['1/2 plátano mediano firme','10 almendras crudas o tostadas sin sal'],
+      preparacion:'Pela y rebana el plátano. Sirve con las almendras al lado.',
+      nota:'Límita las almendras a 10 piezas para mantener la porción baja en FODMAP.' },
+    { id:'CO4', nombre:'Naranja con semillas de calabaza tostadas', calorias:145, vegetariano:true, vegano:true, alergenos:[],
+      ingredientes:['1 naranja mediana','2 cdas de semillas de calabaza tostadas','1 pizca de sal y chile en polvo (opcional)'],
+      preparacion:'Pela y separa la naranja en gajos. Sirve con las semillas de calabaza al lado. Puedes añadir chile en polvo y sal a las semillas.',
+      nota:'Snack rico en vitamina C, zinc y magnesio.' },
+    { id:'CO5', nombre:'Cereal de arroz con leche sin lactosa', calorias:175, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['30g de cereal de arroz inflado (sin azúcar)','3/4 taza de leche sin lactosa o de almendra','1/2 plátano firme en rodajas'],
+      preparacion:'Sirve el cereal de arroz en un tazón, agrega la leche y el plátano.',
+      nota:'Verifica que el cereal no contenga trigo ni jarabes de maíz de alta fructosa.' },
+    { id:'CO6', nombre:'Zanahoria con queso cheddar', calorias:130, vegetariano:true, vegano:false, alergenos:['lacteos'],
+      ingredientes:['2 zanahorias medianas en bastones','30g de queso cheddar en cubos','Sal y limón al gusto'],
+      preparacion:'Corta la zanahoria en bastones y el queso en cubos. Sirve en un plato y añade un poco de jugo de limón y sal a la zanahoria.',
+      nota:'Snack crujiente y nutritivo, libre de FODMAP.' }
+  ]
+};
+
+// ============================================================
+// ESTADO GLOBAL
+// ============================================================
+var pasoActual = 1;
+var datosPaciente = {};
+var menuGenerado = {};
+
+// ============================================================
+// NAVEGACION DE PASOS
+// ============================================================
+function siguientePaso(desde) {
+  if (!validarPaso(desde)) return;
+  guardarDatosPaso(desde);
+  irAPaso(desde + 1);
+}
+function anteriorPaso(desde) {
+  irAPaso(desde - 1);
+}
+function irAPaso(num) {
+  document.querySelectorAll('.form-paso').forEach(function(p){ p.classList.remove('activo'); });
+  document.getElementById('paso-' + num).classList.add('activo');
+  pasoActual = num;
+  actualizarIndicador();
+}
+function actualizarIndicador() {
+  for (var i = 1; i <= 3; i++) {
+    var dot = document.getElementById('dot-' + i);
+    dot.classList.remove('activo','completado');
+    if (i < pasoActual) dot.classList.add('completado');
+    else if (i === pasoActual) dot.classList.add('activo');
+  }
+  var lineas = [[1,2],[2,3]];
+  lineas.forEach(function(par){
+    var l = document.getElementById('linea-' + par[0] + '-' + par[1]);
+    if (pasoActual > par[0]) l.classList.add('completada');
+    else l.classList.remove('completada');
+  });
+}
+
+// ============================================================
+// VALIDACION
+// ============================================================
+function validarPaso(paso) {
+  var ok = true;
+  var campos = {
+    1: [
+      { id:'f-sexo', err:'err-sexo', fn: function(v){ return v !== ''; } },
+      { id:'f-edad', err:'err-edad', fn: function(v){ return v >= 15 && v <= 100; } },
+      { id:'f-peso', err:'err-peso', fn: function(v){ return v >= 30 && v <= 300; } },
+      { id:'f-talla', err:'err-talla', fn: function(v){ return v >= 100 && v <= 250; } }
+    ],
+    2: [
+      { id:'f-actividad', err:'err-actividad', fn: function(v){ return v !== ''; } },
+      { id:'f-comidas', err:'err-comidas', fn: function(v){ return v !== ''; } }
+    ]
+  };
+  if (campos[paso]) {
+    campos[paso].forEach(function(f){
+      var el = document.getElementById(f.id);
+      var errEl = document.getElementById(f.err);
+      if (!f.fn(el.value)) { errEl.classList.add('visible'); ok = false; }
+      else errEl.classList.remove('visible');
+    });
+  }
+  return ok;
+}
+
+// ============================================================
+// GUARDAR DATOS
+// ============================================================
+function guardarDatosPaso(paso) {
+  if (paso === 1) {
+    datosPaciente.nombre = document.getElementById('f-nombre').value.trim();
+    datosPaciente.sexo = document.getElementById('f-sexo').value;
+    datosPaciente.edad = parseInt(document.getElementById('f-edad').value);
+    datosPaciente.peso = parseFloat(document.getElementById('f-peso').value);
+    datosPaciente.talla = parseInt(document.getElementById('f-talla').value);
+  }
+  if (paso === 2) {
+    datosPaciente.actividad = parseFloat(document.getElementById('f-actividad').value);
+    datosPaciente.comidas = parseInt(document.getElementById('f-comidas').value);
+    datosPaciente.objetivo = parseInt(document.getElementById('f-objetivo').value);
+    datosPaciente.dieta = document.querySelector('input[name="dieta"]:checked').value;
+  }
+}
+function recolectarAlergenos() {
+  var ids = ['cacahuate','nueces','mariscos','huevo','lacteos','pescado','soya','ajonjoli'];
+  datosPaciente.alergenos = ids.filter(function(id){ return document.getElementById('al-' + id).checked; });
+}
+
+// ============================================================
+// CALCULO CALORICO — Mifflin-St Jeor
+// ============================================================
+function calcularCalorias() {
+  var p = datosPaciente;
+  var tmb = p.sexo === 'H'
+    ? 10 * p.peso + 6.25 * p.talla - 5 * p.edad + 5
+    : 10 * p.peso + 6.25 * p.talla - 5 * p.edad - 161;
+  return Math.round(tmb * p.actividad) + (p.objetivo || 0);
+}
+
+// ============================================================
+// FILTRAR PLATILLOS
+// ============================================================
+function filtrarPlatillos(lista) {
+  var dieta = datosPaciente.dieta;
+  var alergenos = datosPaciente.alergenos || [];
+  return lista.filter(function(p) {
+    if (dieta === 'vegano' && !p.vegano) return false;
+    if (dieta === 'vegetariano' && !p.vegetariano) return false;
+    if (alergenos.length > 0 && p.alergenos.some(function(a){ return alergenos.indexOf(a) >= 0; })) return false;
+    return true;
+  });
+}
+
+// ============================================================
+// GENERAR MENU DE UN DIA
+// ============================================================
+function elegir(arr, excluir) {
+  var pool = arr.filter(function(p){ return excluir.indexOf(p.id) < 0; });
+  if (!pool.length) pool = arr;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+function generarDia(excluir) {
+  excluir = excluir || [];
+  var d  = filtrarPlatillos(PLATILLOS.desayunos);
+  var c  = filtrarPlatillos(PLATILLOS.comidas);
+  var ce = filtrarPlatillos(PLATILLOS.cenas);
+  var co = filtrarPlatillos(PLATILLOS.colaciones);
+
+  var desayuno = elegir(d, excluir);
+  var comida   = elegir(c, excluir);
+  var cena     = elegir(ce, excluir);
+  var plan = [
+    { tipo:'Desayuno', platillo: desayuno },
+    { tipo:'Comida',   platillo: comida },
+    { tipo:'Cena',     platillo: cena }
+  ];
+  if (datosPaciente.comidas === 5) {
+    var co1 = elegir(co, excluir);
+    var co2 = elegir(co, excluir.concat([co1.id]));
+    plan.splice(1, 0, { tipo:'Colación matutina',   platillo: co1 });
+    plan.splice(4, 0, { tipo:'Colación vespertina', platillo: co2 });
+  }
+  return { plan: plan, ids: plan.map(function(m){ return m.platillo.id; }) };
+}
+
+function generarSemana() {
+  var dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+  var semana = [];
+  var usados = [];
+  dias.forEach(function(nombre) {
+    var diaMenu = generarDia(usados.slice(-6));
+    diaMenu.nombre = nombre;
+    semana.push(diaMenu);
+    diaMenu.ids.forEach(function(id){ usados.push(id); });
+  });
+  return semana;
+}
+
+// ============================================================
+// RENDERIZADO
+// ============================================================
+function renderCalCard(calorias) {
+  var p = datosPaciente;
+  var imc = (p.peso / Math.pow(p.talla / 100, 2)).toFixed(1);
+  var nombre = p.nombre || 'Tu plan personalizado';
+  return '<div><div class="cal-nombre">' + nombre + '</div>' +
+    '<div class="cal-sub">' + (p.sexo==='H'?'Hombre':'Mujer') + ' &bull; ' + p.edad + ' a&ntilde;os &bull; ' + p.peso + ' kg &bull; IMC ' + imc + '</div></div>' +
+    '<div style="text-align:right"><div class="cal-num">' + calorias.toLocaleString() + '</div><div class="cal-unit">kcal / d&iacute;a</div></div>';
+}
+
+function colorTipo(tipo) {
+  var m = { 'Desayuno':'#2563eb', 'Colación matutina':'#7c3aed', 'Comida':'#0891b2', 'Colación vespertina':'#7c3aed', 'Cena':'#0f1b36' };
+  return m[tipo] || '#2563eb';
+}
+
+function renderComidasDia(plan) {
+  return plan.map(function(m) {
+    return '<div class="comida-card">' +
+      '<div class="comida-tipo"><span class="comida-tipo-dot" style="background:' + colorTipo(m.tipo) + '"></span>' + m.tipo + '</div>' +
+      '<div class="comida-nombre">' + m.platillo.nombre + '</div>' +
+      '<div class="comida-cal">&#128293; ' + m.platillo.calorias + ' kcal</div></div>';
+  }).join('');
+}
+
+function renderLista(diasArray) {
+  var todos = [];
+  diasArray.forEach(function(dia) {
+    dia.plan.forEach(function(m) {
+      m.platillo.ingredientes.forEach(function(ing) { todos.push(ing); });
+    });
+  });
+  var unicos = todos.filter(function(v, i, a){ return a.indexOf(v) === i; });
+
+  var cats = {
+    '&#127812; Verduras y frutas': [],
+    '&#127859; Proteínas': [],
+    '&#127811; Carbohidratos': [],
+    '&#127758; Lácteos y huevo': [],
+    '&#127981; Aceites y condimentos': [],
+    '&#127763; Otros': []
+  };
+  var reglas = [
+    [/zanahoria|jitomate|espinaca|pepino|acelgas|lechuga|br.coli|papa|pl.tano|fresa|naranja|lim.n|fruta|verdura/i, '&#127812; Verduras y frutas'],
+    [/pollo|salm.n|at.n|bistec|res|sardina|carne|huevo/i, '&#127859; Proteínas'],
+    [/arroz|tortilla|tostada|avena|pasta|harina|pan|cereal|hotcake/i, '&#127811; Carbohidratos'],
+    [/leche|yogurt|queso|mantequilla|lactosa|almendra|cacahuate/i, '&#127758; Lácteos y huevo'],
+    [/aceite|sal |pimienta|or.gano|comino|albahaca|canela|caldo|miel|maple|tamari|eneldo|epazote/i, '&#127981; Aceites y condimentos']
+  ];
+  unicos.forEach(function(ing) {
+    var cat = '&#127763; Otros';
+    for (var i = 0; i < reglas.length; i++) {
+      if (reglas[i][0].test(ing)) { cat = reglas[i][1]; break; }
+    }
+    if (cats[cat].indexOf(ing) < 0) cats[cat].push(ing);
+  });
+
+  var html = '';
+  Object.keys(cats).forEach(function(cat) {
+    if (!cats[cat].length) return;
+    html += '<div class="lista-categoria"><div class="lista-cat-titulo">' + cat + '</div><div class="lista-items">' +
+      cats[cat].map(function(i){ return '<div class="lista-item"><div class="lista-check-box"></div><span>' + i + '</span></div>'; }).join('') +
+      '</div></div>';
+  });
+  return html;
+}
+
+function renderRecetas(diasArray) {
+  var vistos = {};
+  var platillos = [];
+  diasArray.forEach(function(dia) {
+    dia.plan.forEach(function(m) {
+      if (!vistos[m.platillo.id]) {
+        vistos[m.platillo.id] = true;
+        platillos.push({ tipo: m.tipo, p: m.platillo });
+      }
+    });
+  });
+  return platillos.map(function(item) {
+    var p = item.p;
+    return '<div class="receta-card">' +
+      '<div class="receta-tipo-badge">' + item.tipo + '</div>' +
+      '<div class="receta-nombre">' + p.nombre + '</div>' +
+      '<div class="receta-ingredientes"><div class="receta-ing-titulo">Ingredientes</div>' +
+      '<div class="receta-ing-lista">' + p.ingredientes.map(function(i){ return '&bull; ' + i; }).join('<br>') + '</div></div>' +
+      '<div class="receta-prep">&#128290; <strong>Preparaci&oacute;n:</strong> ' + p.preparacion + '</div>' +
+      (p.nota ? '<div class="receta-nota">&#128204; ' + p.nota + '</div>' : '') +
+      '</div>';
+  }).join('');
+}
+
+// ============================================================
+// FUNCION PRINCIPAL
+// ============================================================
+function generarMenu() {
+  guardarDatosPaso(2);
+  recolectarAlergenos();
+  var calorias = calcularCalorias();
+  datosPaciente.calorias = calorias;
+
+  var diaMenu     = generarDia([]);
+  var semanaMenu  = generarSemana();
+  menuGenerado.diario  = diaMenu;
+  menuGenerado.semanal = semanaMenu;
+
+  document.getElementById('cal-card-display').innerHTML = renderCalCard(calorias);
+  document.getElementById('comidas-diario').innerHTML   = renderComidasDia(diaMenu.plan);
+  document.getElementById('lista-diario-body').innerHTML   = renderLista([diaMenu]);
+  document.getElementById('recetas-diario-body').innerHTML = renderRecetas([diaMenu]);
+
+  var tabsHtml = semanaMenu.map(function(d, i){
+    return '<button class="dia-tab ' + (i===0?'activo':'') + '" onclick="verDia(' + i + ')" id="tab-' + i + '">' + d.nombre + '</button>';
+  }).join('');
+  document.getElementById('dia-tabs').innerHTML = tabsHtml;
+
+  var diasHtml = semanaMenu.map(function(d, i){
+    return '<div class="comidas-dia ' + (i===0?'activo':'') + '" id="dia-' + i + '">' + renderComidasDia(d.plan) + '</div>';
+  }).join('');
+  document.getElementById('dias-contenido').innerHTML = diasHtml;
+  document.getElementById('lista-semanal-body').innerHTML   = renderLista(semanaMenu);
+  document.getElementById('recetas-semanal-body').innerHTML = renderRecetas(semanaMenu);
+
+  document.getElementById('form-area').style.display       = 'none';
+  document.getElementById('resultado-area').style.display  = 'block';
+  document.querySelector('.menu-section').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ============================================================
+// CONTROLES UI
+// ============================================================
+function verTipo(tipo) {
+  document.getElementById('vista-diario').style.display  = tipo==='diario'  ? 'block' : 'none';
+  document.getElementById('vista-semanal').style.display = tipo==='semanal' ? 'block' : 'none';
+  document.getElementById('btn-diario').classList.toggle('activo',  tipo==='diario');
+  document.getElementById('btn-semanal').classList.toggle('activo', tipo==='semanal');
+}
+function verDia(idx) {
+  document.querySelectorAll('.dia-tab').forEach(function(t, i){ t.classList.toggle('activo', i===idx); });
+  document.querySelectorAll('.comidas-dia').forEach(function(d, i){ d.classList.toggle('activo', i===idx); });
+}
+function editarDatos() {
+  document.getElementById('form-area').style.display      = 'block';
+  document.getElementById('resultado-area').style.display = 'none';
+  irAPaso(1);
+}
+function imprimirMenu() {
+  window.print();
+}
+</script>
+</body>
+</html>
